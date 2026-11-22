@@ -21,14 +21,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <ul>
           <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
-          <li class="has-sub">
-            <a href="{{ '/music' | relative_url }}" {% if page.url == '/music' or page.release %}aria-current="page"{% endif %}>Music</a>
-            <ul class="sub">
-              {% for r in site.data.releases %}
-              <li><a href="{{ '/' | append: r.slug | relative_url }}">{{ r.short }}</a></li>
-              {% endfor %}
-            </ul>
-          </li>
+          <li><a href="{{ '/music' | relative_url }}" {% if page.url == '/music' or page.release %}aria-current="page"{% endif %}>Music</a></li>
           <li><a href="{{ '/about' | relative_url }}" {% if page.url == '/about' %}aria-current="page"{% endif %}>About</a></li>
           <li><a href="{{ '/contact' | relative_url }}" {% if page.url == '/contact' %}aria-current="page"{% endif %}>Contact</a></li>
         </ul>

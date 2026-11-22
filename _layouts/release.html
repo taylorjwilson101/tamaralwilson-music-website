@@ -42,17 +42,30 @@ layout: default
   {% endif %}
 </section>
 
+{% if r.press %}
+<section class="wrap section press-release">
+  <p class="eyebrow">Press release</p>
+  <h2 class="h3">{{ r.press.headline }}</h2>
+  <div class="prose">
+    {% for para in r.press.paragraphs %}<p>{{ para }}</p>{% endfor %}
+    {% if r.press.quote %}<p class="quote-line">&ldquo;{{ r.press.quote }}&rdquo; <span class="muted small">&mdash; {{ r.press.quote_by }}</span></p>{% endif %}
+  </div>
+</section>
+{% endif %}
+
 {% if r.credits or r.credit_images %}
 <section class="wrap section">
-  <h2>Credits</h2>
-  {% if r.credits %}<p class="prose">{{ r.credits }}</p>{% endif %}
-  {% if r.credit_images %}
-  <div class="credit-images">
-    {% for img in r.credit_images %}
-    <a href="{{ img.src | relative_url }}"><img src="{{ img.src | relative_url }}" alt="{{ img.alt }}" loading="lazy"></a>
-    {% endfor %}
-  </div>
-  {% endif %}
+  <details class="credits">
+    <summary class="btn ghost"><span class="when-closed">Show credits</span><span class="when-open">Hide credits</span></summary>
+    {% if r.credits %}<p class="prose">{{ r.credits }}</p>{% endif %}
+    {% if r.credit_images %}
+    <div class="credit-images">
+      {% for img in r.credit_images %}
+      <a href="{{ img.src | relative_url }}"><img src="{{ img.src | relative_url }}" alt="{{ img.alt }}" loading="lazy"></a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </details>
 </section>
 {% endif %}
 
