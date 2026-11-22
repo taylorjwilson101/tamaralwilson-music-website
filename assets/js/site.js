@@ -33,9 +33,9 @@ document.addEventListener('click', function (e) {
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   var ctx = canvas.getContext('2d');
-  var COLORS = ['240,169,59', '255,236,200', '201,163,224']; // gold, warm cream, soft lavender
+  var COLORS = ['255,190,80', '255,246,225', '214,176,255', '130,160,255']; // gold, cream, lavender, blue (like the old site)
   var EVERY_MS = 2600;   // time between bursts
-  var MAX_ALPHA = 0.8;   // soft, not loud
+  var MAX_ALPHA = 1;     // brightness (0 to 1)
   var particles = [], rockets = [];
   var w = 0, h = 0, dpr = 1, running = false, raf = 0, last = 0, nextBurst = 0;
 
@@ -47,14 +47,13 @@ document.addEventListener('click', function (e) {
   }
 
   function launch() {
-    // stay over the open dark area on the left (around her name); full width on phones
-    var x = w * (w > 860 ? 0.04 + Math.random() * 0.48 : 0.1 + Math.random() * 0.8);
+        var x = w * (0.06 + Math.random() * 0.88);
     var top = h * (0.08 + Math.random() * 0.2);
     rockets.push({ x: x, y: h, ty: top, vy: -(h - top) / 0.9, color: COLORS[(Math.random() * COLORS.length) | 0] });
   }
 
   function burst(x, y, color) {
-    var n = 60 + ((Math.random() * 20) | 0);
+    var n = 70 + ((Math.random() * 24) | 0);
     var speed = Math.min(w, h) * (0.26 + Math.random() * 0.1);
     for (var i = 0; i < n; i++) {
       var a = (i / n) * Math.PI * 2 + Math.random() * 0.2;
@@ -69,6 +68,7 @@ document.addEventListener('click', function (e) {
     if (t >= nextBurst) { launch(); nextBurst = t + EVERY_MS * (0.8 + Math.random() * 0.5); }
     ctx.clearRect(0, 0, w, h);
     ctx.lineCap = 'round';
+    ctx.globalCompositeOperation = 'lighter'; // overlapping sparks glow
 
     for (var r = rockets.length - 1; r >= 0; r--) {
       var k = rockets[r], py = k.y;
@@ -88,7 +88,7 @@ document.addEventListener('click', function (e) {
       p.x += p.vx * dt; p.y += p.vy * dt;
       var fade = 1 - p.life / p.max;
       ctx.strokeStyle = 'rgba(' + p.color + ',' + (MAX_ALPHA * fade) + ')';
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 2.4;
       ctx.beginPath(); ctx.moveTo(p.px, p.py); ctx.lineTo(p.x, p.y); ctx.stroke();
     }
     raf = requestAnimationFrame(frame);
