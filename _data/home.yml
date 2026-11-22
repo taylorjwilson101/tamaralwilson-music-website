@@ -1,0 +1,70 @@
+# Home page content (matches the original tamaralwilson.com home page).
+
+banner_video: "https://player.vimeo.com/video/1099214383?h=e0024aceb5&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&controls=0&background=1"
+banner_poster: /images/welcome-banner.jpg
+
+marquee: 'Tamara''s latest album "pop collection remastered"  18 of her Best!     Single release "Life" out now'
+
+summer_singles:
+  - id: fltYTL8utxE
+    title: Together We Stand
+    yt_title: Tamara L WIlson - Together We Stand (Lyric Video)
+    text: "Patriotic lyric video for Tamara L Wilson's 'Together We Stand'.  This song was written to inspire unity; especially in America, Tamara's home she loves!   The saxophone compliments her smokey low vocals and the excellent musicians deliver a stellar performance on this upbeat tune.  This song's great message can lift you to stand tall and stand together!  Let the craziness go for a minute and just enjoy the soulful, bluesy, jazzy upbeat vibes to stir your body and soul!"
+  - id: ROKIx9ycPMg
+    title: Shine On
+    yt_title: Tamara L Wilson - Shine On (Lyric Video)
+    text: "'Shine On' is a funky, upbeat dance song sure to please as some fans have shared it's Tamara's best yet!  This song is the second release from Tamara's Soulful Summer Music Series...let the soulful, bluesy, funky, upbeat vibes from this tune stir your body and soul!"
+  - id: kgT7nXEu8Yw
+    title: Just A Little Time
+    text: "Take a moment, slow down, and let the smooth vibes of “Just A Little Time” wash over you. With her signature soulful vocals and heartfelt lyrics, Tamara L. Wilson delivers a moving message about love, patience, and the power of giving someone the space they need to grow. Whether you’re in love, healing, or simply reflecting, this track is a beautiful reminder that sometimes all we need… is just a little time."
+
+featuring: Featuring the incredible talents of Jamie Hendrickson on guitar, Michael Tillis on drums, Thompson Knoles on piano and synth bass, and Ben Colvin on saxophone.
+
+life:
+  id: SLrN3ORgGow
+  title: Life Lyric Video
+  title_hidden: true
+  text: "Catchy tune about life and how we are all tied to one another and the elements set to a funky upbeat rhythm. Credit and Thanks to: Frankie Chancellor (piano, organ and mix), Jeff Zimmerman (Guitar), Brian Haimbach (Backup Vocals), & Tom Kenyan for teaching 'Chant of the Elements' El, Ka, Leem, Om (Earth, Fire, Water & Air)"
+  link: https://tamaralwilson.hearnow.com/life
+
+all_about_love_cover: /images/all-about-love-cover.jpg
+
+all_about_love:
+  - id: Pq9z9OEnXa8
+    title: Let Love Show Remix
+    text: "Tamara's remix of 'Let Love Show' with a great up-tempo samba groove."
+  - id: cbu5mu8H1_I
+    title: You and Me
+    text: "Latest Romantic Lyric Video Release from Tamara's \"All About Love\" album."
+  - id: KoBAXSBWkBk
+    title: All About Love
+    text: The title track is a country/pop duo with the awesome talent of Datrian Johnson, guest vocalist.
+  - id: H_T1uyJ1J44
+    title: Chemistry
+    text: "Fun new song from Tamara's 'All About Love' album that celebrates the sparks between lovers"
+  - id: UxfTpcQrsls
+    title: Love Loves Anyway
+    text: "Lyric video from Tamara's 'All About Love' album that tells the story of betrayal in the digital age and how 'Love Loves Anyway'."
+  - id: pGMgLRlWfTc
+    title: Talkin' To You
+    text: "Tamara's song about love lost and bittersweet memories from her 'All About Love' Album"
+  - id: Jxj40Qz9pu0
+    title: Why
+    text: "This R&B/Pop crossover song features Macon, GA’s blind blues guitar legend Joey Stuckey who plays and programs every instrument as Tamara takes us on a journey with her soulful vocals; leading us back to the melodies of our heart and soul.  \"Why\" can't love have the last word?"
+
+song_credits:
+  - { src: /images/credits/01-tamara-wilson.jpg, alt: "Tamara L. Wilson, singer/songwriter" }
+  - { src: /images/credits/02-frank-sciandra.jpg, alt: "Frank Sciandra, guitar" }
+  - { src: /images/credits/03-datrian-johnson.jpg, alt: "Datrian Johnson, guest vocalist" }
+  - { src: /images/credits/04-joey-stuckey.jpg, alt: "Joey Stuckey, bass and guitar" }
+  - { src: /images/credits/05-coleman-murphy.jpg, alt: "Coleman Murphy, guitar and sitar" }
+  - { src: /images/credits/06-paul-mcintire.jpg, alt: "Paul McIntire, violin" }
+  - { src: /images/credits/07-terry-peoples.jpg, alt: "Terry Peoples, bass" }
+  - { src: /images/credits/08-jason-decristofaro.jpg, alt: "Jason DeCristofaro, piano" }
+  - { src: /images/credits/09-jake-moss.jpg, alt: "Jake Moss, flamenco guitar" }
+  - { src: /images/credits/10-freddy-tripp.jpg, alt: "Freddy Tripp, trumpet, trombone, piano" }
+  - { src: /images/credits/11-rick-murray.jpg, alt: "Rick Murray, drums" }
+  - { src: /images/credits/12-zack-page.jpg, alt: "Zack Page, bass" }
+  - { src: /images/credits/13-tom-rule.jpg, alt: "Tom Rule, piano and strings" }
+  - { src: /images/credits/14-phil-ludwig.jpg, alt: "Phil Ludwig, producer, recording engineer, mix and mastering" }
+  - { src: /images/credits/15-zack-crawford.jpg, alt: "Zack Crawford, programmed drums" }

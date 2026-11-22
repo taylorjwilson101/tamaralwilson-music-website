@@ -159,3 +159,21 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .footer-inner { border-top: 1px solid var(--line); padding: 32px 0 48px; text-align: center; color: var(--muted); font-size: 14px; }
 .yt-icon { display: inline-block; color: var(--text); margin-bottom: 16px; }
 .yt-icon svg { width: 22px; height: 22px; }
+
+/* Home banner: the original's looping "Welcome to Tamara's Music" video, with a still image underneath */
+.banner { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000; }
+.banner img, .banner iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+
+/* Page blocks */
+.page-top { height: 24px; }
+.label-wrap { padding-top: 24px; }
+.block { padding-bottom: 48px; }
+.image-row.natural { align-items: start; }
+.image-row.natural img { aspect-ratio: auto; object-fit: contain; }
+.video-list.full .video-row, .video-list.grid .video-row { grid-template-columns: 1fr; gap: 16px; }
+.video-list.full .video-row .yt-wrap, .video-list.grid .video-row .yt-wrap { order: 0; }
+.video-list.full .copy, .video-list.grid .copy { padding-top: 0; }
+.video-list.grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+@media (max-width: 760px) { .video-list.grid { grid-template-columns: 1fr; } }
+.video-list.caps .title-rule { text-transform: uppercase; letter-spacing: 4px; font-size: 16px; }
+.band-text + .band-text { margin-top: 24px; }

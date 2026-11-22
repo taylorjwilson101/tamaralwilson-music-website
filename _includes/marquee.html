@@ -1,0 +1,6 @@
+{% comment %} Scrolling announcement line, like the original. The text is repeated so the loop is seamless. {% endcomment %}
+<div class="marquee" role="marquee" aria-label="{{ include.text | escape }}">
+  <div class="marquee-track" aria-hidden="true">
+    {% for i in (1..6) %}<span>{{ include.text }}</span>{% endfor %}
+  </div>
+</div>

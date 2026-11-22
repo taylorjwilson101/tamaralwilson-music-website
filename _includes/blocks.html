@@ -1,0 +1,38 @@
+{% comment %}
+  Renders a page from a list of blocks (see _data/releases.yml).
+  Block types:
+    marquee  – scrolling announcement:       { type: marquee, text: "..." }
+    label    – white heading box:            { type: label, text: "..." }
+    images   – row of pictures:              { type: images, items: [ {src, alt, href} ] }
+    videos   – video list:                   { type: videos, style: rows | full | grid, caps: true, items: [ {id, title, text, link} ] }
+               rows = alternating left/right (default), full = one big video with the title under it,
+               grid = two per row with the title under each. caps = spaced capital titles.
+    band     – photo strip with big text:    { type: band, image: /images/x.jpg, lines: ["...", "..."] }
+    text     – centered paragraph(s):        { type: text, lines: ["...", "..."] }
+{% endcomment %}
+{% for b in include.blocks %}
+  {% case b.type %}
+  {% when 'marquee' %}
+    {% include marquee.html text=b.text %}
+  {% when 'label' %}
+    <div class="wrap label-wrap"><h2 class="label">{{ b.text }}</h2></div>
+  {% when 'images' %}
+    <div class="wrap block"><div class="image-row{% if b.natural %} natural{% endif %}">
+      {% for i in b.items %}
+        {% if i.href %}<a href="{{ i.href }}">{% else %}<a href="{{ i.src | relative_url }}">{% endif %}<img src="{{ i.src | relative_url }}" alt="{{ i.alt }}" loading="lazy"></a>
+      {% endfor %}
+    </div></div>
+  {% when 'videos' %}
+    <div class="wrap block">
+      <div class="video-list {{ b.style | default: 'rows' }}{% if b.caps %} caps{% endif %}">
+        {% for v in b.items %}{% include video.html v=v %}{% endfor %}
+      </div>
+    </div>
+  {% when 'band' %}
+    <div class="band" style="background-image:url('{{ b.image | relative_url }}')">
+      <div class="wrap">{% for l in b.lines %}<p class="band-text">{{ l }}</p>{% endfor %}</div>
+    </div>
+  {% when 'text' %}
+    <div class="wrap block"><div class="prose">{% for l in b.lines %}<p>{{ l }}</p>{% endfor %}</div></div>
+  {% endcase %}
+{% endfor %}
