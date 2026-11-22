@@ -35,7 +35,6 @@ h3 { font-size: 1.35rem; letter-spacing: .03em; }
 /* ---------- Header ---------- */
 .site-header { text-align: center; padding: 28px 16px 8px; position: relative; z-index: 5; }
 .site-name { display: inline-block; font: 700 clamp(2.6rem, 8vw, 4.6rem)/1 var(--display); letter-spacing: .01em; text-transform: uppercase; text-decoration: none; color: var(--plum); }
-.home .site-header .site-name { font-size: clamp(2.6rem, 7.5vw, 5rem); }
 .site-nav ul { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 8px; }
 .site-nav a { display: block; padding: 10px 14px; text-decoration: none; font: 600 .8rem/1 var(--sans); letter-spacing: .38em; text-transform: uppercase; margin-right: -.38em; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 2px; }
