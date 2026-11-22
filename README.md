@@ -40,9 +40,12 @@ GitHub rebuilds the site about a minute after each change.
 | Albums, EPs, singles, videos, track lists, credits | `_data/releases.yml` |
 | Interviews, outreach video, free MP3 downloads | `_data/about.yml` |
 | Home page | `index.html` |
-| Bio | `about.html` |
+| Watch page (all videos, built automatically from the albums) | `watch.html` |
+| Bio, musician photos | `about.html`, `_data/about.yml` |
+| Connect (contact) page | `connect.html` |
 | Site name, YouTube/Jango/HearNow links, contact form | `_config.yml` |
-| Colors and fonts | `assets/css/style.css` (the variables at the top) |
+| Colors and fonts | `assets/css/style.css` (the variables at the top: orange, plum, cream) |
+| Big homepage picture | `images/hero-pop-collection.jpg` |
 
 **Adding a video:** copy an existing `- id:` block in `_data/releases.yml` and swap in the
 YouTube id: the 11 characters after `watch?v=` in the video's address.
@@ -65,7 +68,7 @@ Images go in `images/`, and MP3s go in `audio/`.
 
 A static site can't send email by itself, so the form uses [Formspree](https://formspree.io) (free tier: 50 messages a month).
 Create a form there, then put its ID in `formspree_id` in `_config.yml`.
-Until that's set, the contact page shows `contact_email` (if filled in), or else links to YouTube and Jango.
+Until that's set, the Connect page shows `contact_email` (if filled in), or else links to YouTube and Jango.
 
 ## Preview locally (optional)
 

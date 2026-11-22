@@ -2,13 +2,29 @@
 layout: default
 title: Music
 permalink: /music
+section: music
 description: Albums, EPs and singles by Tamara L. Wilson, with lyric videos and credits.
 ---
-<section class="wrap section page-head">
-  <p class="eyebrow">Discography</p>
+<section class="page-intro">
   <h1>Music</h1>
-  <p class="lede">Albums, EPs and singles, each with lyric videos and credits. Buy and stream on <a class="text-link" href="{{ site.links.buy_pop_collection }}">HearNow</a>, or listen free on <a class="text-link" href="{{ site.links.jango }}">Jango</a> and <a class="text-link" href="{{ site.links.youtube }}">YouTube</a>.</p>
+  <p class="lede">Albums, EPs and singles. Buy and stream on <a class="text-link" href="{{ site.links.buy_pop_collection }}">HearNow</a>, or listen free on <a class="text-link" href="{{ site.links.jango }}">Jango</a>.</p>
 </section>
-<section class="wrap section">
-  {% include release-grid.html %}
+<section class="band on-cream">
+  <div class="wrap">
+    <ul class="release-grid">
+      {% for r in site.data.releases %}
+      <li>
+        <a href="{{ '/' | append: r.slug | relative_url }}">
+          {% if r.cover and r.cover_wide != true %}
+          <img src="{{ r.cover | relative_url }}" alt="" loading="lazy">
+          {% else %}
+          <img src="https://i.ytimg.com/vi/{{ r.videos[0].id }}/mqdefault.jpg" alt="" loading="lazy">
+          {% endif %}
+          <span class="caps">{{ r.kind }}</span>
+          <h3>{{ r.title }}</h3>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>

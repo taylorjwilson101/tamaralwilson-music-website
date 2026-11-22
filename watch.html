@@ -1,0 +1,29 @@
+---
+layout: default
+title: Watch
+permalink: /watch
+section: watch
+description: Lyric videos and interviews from Tamara L. Wilson.
+---
+<section class="page-intro">
+  <h1>Watch</h1>
+  <p class="lede">Lyric videos from every album, EP and single.</p>
+  <ul class="chips" style="margin-top:28px">
+    {% for r in site.data.releases %}<li><a href="#{{ r.slug }}">{{ r.short }}</a></li>{% endfor %}
+  </ul>
+</section>
+<section class="band on-cream">
+  <div class="wrap">
+    {% for r in site.data.releases %}
+    <div class="group" id="{{ r.slug }}">
+      <div class="section-head">
+        <div><span class="caps kicker">{{ r.kind }}</span><h2>{{ r.title }}</h2></div>
+        <a class="btn line" href="{{ '/' | append: r.slug | relative_url }}">Album page</a>
+      </div>
+      <div class="video-grid">
+        {% for v in r.videos %}{% include video.html v=v %}{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

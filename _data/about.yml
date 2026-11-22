@@ -3,6 +3,7 @@ outreach:
   title: Homeless Outreach Theme Song
   text: "I collaborated with VOICE to make a theme song for the homeless outreach in Hickory, NC. Check out this video and together, let's make a meaningful impact!"
   link: http://voiceclubnc.org/
+  link_label: Visit VOICE
 
 interviews:
   - id: kqAyVlKZfAg
@@ -17,3 +18,20 @@ downloads:
     file: /audio/play-tamara-l-wilson.mp3
   - title: The Lord's Prayer
     file: /audio/the-lords-prayer-tamara-l-wilson.mp3
+
+song_credits:
+  - { src: /images/credits/01-tamara-wilson.jpg, alt: "Tamara L. Wilson, singer/songwriter" }
+  - { src: /images/credits/02-frank-sciandra.jpg, alt: "Frank Sciandra, guitar" }
+  - { src: /images/credits/03-datrian-johnson.jpg, alt: "Datrian Johnson, guest vocalist" }
+  - { src: /images/credits/04-joey-stuckey.jpg, alt: "Joey Stuckey, bass and guitar" }
+  - { src: /images/credits/05-coleman-murphy.jpg, alt: "Coleman Murphy, guitar and sitar" }
+  - { src: /images/credits/06-paul-mcintire.jpg, alt: "Paul McIntire, violin" }
+  - { src: /images/credits/07-terry-peoples.jpg, alt: "Terry Peoples, bass" }
+  - { src: /images/credits/08-jason-decristofaro.jpg, alt: "Jason DeCristofaro, piano" }
+  - { src: /images/credits/09-jake-moss.jpg, alt: "Jake Moss, flamenco guitar" }
+  - { src: /images/credits/10-freddy-tripp.jpg, alt: "Freddy Tripp, trumpet, trombone, piano" }
+  - { src: /images/credits/11-rick-murray.jpg, alt: "Rick Murray, drums" }
+  - { src: /images/credits/12-zack-page.jpg, alt: "Zack Page, bass" }
+  - { src: /images/credits/13-tom-rule.jpg, alt: "Tom Rule, piano and strings" }
+  - { src: /images/credits/14-phil-ludwig.jpg, alt: "Phil Ludwig, producer, recording engineer, mix and mastering" }
+  - { src: /images/credits/15-zack-crawford.jpg, alt: "Zack Crawford, programmed drums" }
