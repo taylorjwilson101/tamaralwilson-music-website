@@ -3,42 +3,37 @@
 This is the repo that stores my attempt to create a free version of my Mom's website.
 
 The site for singer/songwriter **Tamara L. Wilson**, rebuilt from the old GoDaddy Website
-Builder site as a free static site. This repo is private, so the site is built and hosted
-for free by **Cloudflare Pages**, which can deploy from private GitHub repos.
+Builder site as a static site that **GitHub Pages** builds and hosts.
 The only cost left is the yearly renewal of the domain name.
 
 ## Publish it (one time)
 
-1. Create a free account at https://dash.cloudflare.com/sign-up.
-2. In the dashboard, go to **Workers & Pages → Create → Pages → Connect to Git**.
-   Connect GitHub and allow access to the `tamaralwilson-music-website` repo only.
-3. Pick the repo and use these build settings:
-   - **Production branch:** `main`
-   - **Framework preset:** Jekyll
-   - **Build command:** `bundle exec jekyll build`
-   - **Build output directory:** `_site`
-   - Under **Environment variables**, add `RUBY_VERSION` = `3.3.6`
-4. Click **Save and Deploy**. After a couple of minutes the site is live at
-   `https://<project-name>.pages.dev`. Check it there before moving the domain.
+GitHub Pages is free for **public** repos. A private repo needs GitHub Pro (about $4/month).
+To make the repo public: **Settings → General → Danger Zone → Change visibility**.
+
+1. In the repo, open **Settings → Pages**.
+2. Under **Build and deployment**, set *Source* to **Deploy from a branch**,
+   choose branch **main** and folder **/ (root)**, then click **Save**.
+3. After a minute or two the site is live at
+   https://taylorjwilson101.github.io/tamaralwilson-music-website/
 
 ### Point tamaralwilson.com at it
 
-The simplest route is to let Cloudflare run the domain's DNS (free):
-
-1. In Cloudflare, **Add a domain**: enter `tamaralwilson.com` and pick the **Free** plan.
-   Cloudflare copies the existing DNS records and gives you two nameservers.
-2. At GoDaddy, open **My Products → tamaralwilson.com → DNS → Nameservers → Change**,
-   choose "I'll use my own nameservers" and enter the two Cloudflare nameservers.
-   **If the domain has email (e.g. MX records), check that Cloudflare copied those records before you switch.**
-3. In your Pages project, open **Custom domains → Set up a custom domain** and add both
-   `tamaralwilson.com` and `www.tamaralwilson.com`. Cloudflare creates the records and the HTTPS certificate.
-4. When the new site loads at tamaralwilson.com, cancel the GoDaddy **Website Builder** plan.
+1. In `_config.yml`, set `url: "https://tamaralwilson.com"` and `baseurl: ""`, then commit.
+2. In **Settings → Pages → Custom domain**, enter `tamaralwilson.com` and save.
+3. At GoDaddy, open the DNS settings for tamaralwilson.com:
+   - Remove the existing `A` records for `@` and add four `A` records for `@`:
+     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - Set the `CNAME` record for `www` to `taylorjwilson101.github.io`
+   - Leave any email (MX) records alone.
+4. Once DNS updates (minutes to a few hours), tick **Enforce HTTPS** in Settings → Pages.
+5. When the new site loads at tamaralwilson.com, cancel the GoDaddy **Website Builder** plan.
    **Keep the domain registration**, and turn on auto-renew.
 
 ## Editing the site
 
 You can edit everything in the browser on GitHub: open a file, click the pencil icon, then **Commit changes**.
-Cloudflare rebuilds the site about two minutes after each change.
+GitHub rebuilds the site about a minute after each change.
 
 | To change… | Edit this file |
 |---|---|

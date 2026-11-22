@@ -4,8 +4,8 @@ tagline: Soulful pop, R&B and feel-good songs from North Carolina
 description: >-
   Official site of Tamara L. Wilson, singer/songwriter from North Carolina.
   Soulful pop and R&B with a message of love, unity and positive vibes.
-url: "https://tamaralwilson.com"
-baseurl: ""
+url: "https://taylorjwilson101.github.io"
+baseurl: "/tamaralwilson-music-website"  # set to "" once tamaralwilson.com points here
 
 # Links used across the site
 links:
