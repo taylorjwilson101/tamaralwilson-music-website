@@ -1,0 +1,359 @@
+# Every album, EP and singles page on the site.
+# The order here is the order on the Music page and in the menu.
+#
+# Each video needs a YouTube id: the 11 characters after "watch?v=" or "youtu.be/".
+# To add a video, copy an existing "- id:" block and change it.
+
+- slug: pop-collection
+  title: Pop Collection Remastered
+  short: Pop Collection
+  kind: Album
+  cover: /images/pop-collection-cover.jpg
+  buy: https://tamaralwilson.hearnow.com/pop-collection
+  intro: >-
+    Eighteen of Tamara's best, remastered and gathered in one place: soulful pop,
+    R&B, samba, bossa and funk with a message of love.
+  tracklist:
+    - You and Me
+    - Feel for You
+    - Easy
+    - Everything to Me
+    - Let Love Show (Samba Remix)
+    - Why
+    - Shine On
+    - Paradise
+    - Just a Little Time
+    - Talkin' to You
+    - Your Own Kind of Beautiful
+    - Love Plan
+    - All About Love
+    - Chemistry
+    - Together We Stand
+    - Little More Love Remix
+    - Let It Go
+    - Outside Lookin' In Remix
+  credit_images:
+    - src: /images/pop-credits-1.jpg
+      alt: "Pop Collection credits, part 1: musicians for You and Me; Feel for You, Easy, Paradise and Everything to Me; Let Love Show (Samba Remix); Why and Little More Love Remix; Shine On, Just a Little Time and Together We Stand"
+    - src: /images/pop-credits-2.jpg
+      alt: "Pop Collection credits, part 2"
+  videos:
+    - id: cbu5mu8H1_I
+      title: You and Me
+      text: Tamara L. Wilson brings you a new sultry hit and the lyric video for "You and Me". We hope you enjoy the beautiful vocals and soothing instrumentals.
+    - id: FDhKxOqNy9U
+      title: Feel for You
+      text: A jazzy beat that talks about overcoming the difficulties of a long-distance relationship and enjoying the time you have together.
+    - id: 7tsvaf3xYBM
+      title: Everything to Me
+      text: Here's a light-hearted romantic song, just perfect to share with your special loved one... keep your love alive!
+    - id: Pq9z9OEnXa8
+      title: Let Love Show (Samba Remix)
+      text: Tamara has masterfully remixed this song with a great up-tempo samba groove for your enjoyment.
+    - id: Jxj40Qz9pu0
+      title: Why
+      text: This R&B/Pop crossover song features Macon, GA's blind blues guitar legend Joey Stuckey, who plays and programs every instrument as Tamara takes us on a journey with her soulful vocals; leading us back to the melodies of our heart and soul. "Why" can't love have the last word?
+    - id: 37yK1LNqzZk
+      title: Easy
+      text: We, oftentimes, get so busy with the complexities of life that we don't make much time to just take it easy. I wrote this song to help you with that! De-stress while listening to this relaxing, uplifting song.
+    - id: 87vTbr-lhWM
+      title: Paradise
+      text: Uplifting summer energy with a romantic vibe.
+    - id: kgT7nXEu8Yw
+      title: Just a Little Time
+      text: With her signature soulful vocals and heartfelt lyrics, Tamara delivers a moving message about love, patience, and the power of giving someone the space they need to grow. Sometimes all we need... is just a little time.
+    - id: pGMgLRlWfTc
+      title: Talkin' to You
+      text: A soulful tune with beautiful vocals and heartfelt lyrics.
+    - id: nloW898SKLI
+      title: Your Own Kind of Beautiful
+      text: Everyone is beautiful in their own way! This song celebrates that with heart and soul!
+    - id: RemN5PknKGk
+      title: Love Plan
+      text: A song encouraging all of us to live a life full of love and to spread good vibes to everyone around us.
+    - id: KoBAXSBWkBk
+      title: All About Love
+      text: A country/pop hit featuring the talented guest vocalist, Datrian Johnson.
+    - id: H_T1uyJ1J44
+      title: Chemistry
+      text: A fun and upbeat song that celebrates the spark between lovers with jazzy instrumentals and soulful vocals.
+    - id: fltYTL8utxE
+      title: Together We Stand
+      text: Written to inspire unity, especially in America, Tamara's home she loves! The saxophone complements her smoky low vocals on this upbeat tune.
+    - id: S8MRWHdP3Fk
+      title: Little More Love Remix
+      text: A fun, upbeat, and inspirational dance song with an uplifting message of love and unity.
+    - id: R72elF2Vmus
+      title: Let It Go
+      text: Whether it's stress from work or challenges in life, when you've done your best... time to Let It Go! Plug in this song for a ride!
+    - id: Lmmi0ifdViE
+      title: Outside Lookin' In (Remix)
+      text: A fresh, energetic remix blending soulful vocals with infectious beats, an anthem for anyone who's ever felt like an outsider looking for their place in the world.
+    - id: ROKIx9ycPMg
+      title: Shine On
+      text: A funky, upbeat dance song, and some fans say it's Tamara's best yet! The second release from Tamara's Soulful Summer Music Series.
+
+- slug: all-about-love
+  title: All About Love
+  short: All About Love
+  kind: Album
+  year: 2022
+  cover: /images/all-about-love-cover.jpg
+  cover_wide: true
+  intro: >-
+    Soulful Pop/R&B songs that share Tamara's spicy real-life stories, released
+    December 9, 2022. Produced, recorded, mixed and mastered by Phil Ludwig.
+  credits: >-
+    Jake Moss (flamenco guitar), Paul McIntire (violin), Jason DeCristofaro (piano/congas),
+    Coleman Murphy (sitar/guitar), Freddy Tripp (trumpet/trombone/piano), Tom Rule (strings),
+    Zack Page (bass), Terry Peoples (bass), James Kalen (drums), Rick Murray (drums), and
+    Joey Stuckey (bass and all instrumentation on "Why"). Sound engineering and editing by Tim Norris.
+  videos:
+    - id: Pq9z9OEnXa8
+      title: Let Love Show (Samba Remix)
+      text: Tamara's remix of "Let Love Show" with a great up-tempo samba groove.
+    - id: cbu5mu8H1_I
+      title: You and Me
+      text: Romantic lyric video from the "All About Love" album.
+    - id: KoBAXSBWkBk
+      title: All About Love
+      text: The title track is a country/pop duet with the awesome talent of Datrian Johnson, guest vocalist.
+    - id: H_T1uyJ1J44
+      title: Chemistry
+      text: A fun song that celebrates the sparks between lovers.
+    - id: UxfTpcQrsls
+      title: Love Loves Anyway
+      text: The story of betrayal in the digital age and how "Love Loves Anyway".
+    - id: pGMgLRlWfTc
+      title: Talkin' to You
+      text: Tamara's song about love lost and bittersweet memories.
+    - id: Jxj40Qz9pu0
+      title: Why
+      text: This R&B/Pop crossover song features Macon, GA's blind blues guitar legend Joey Stuckey, who plays and programs every instrument. "Why" can't love have the last word?
+
+- slug: y-o-k-o-b
+  title: Your Own Kind of Beautiful
+  short: Y.O.K.O.B.
+  kind: EP
+  intro: Videos from the "Your Own Kind of Beautiful" EP.
+  credits: Special thanks to Jason Homan for ALL the instrumentation on the Your Own Kind of Beautiful EP!
+  videos:
+    - id: nloW898SKLI
+      title: Your Own Kind of Beautiful
+      text: Everyone is beautiful in their own way!
+    - id: RemN5PknKGk
+      title: Love Plan
+      text: Lyric video for the single "Love Plan" that welcomes love to lead the way!
+    - id: 9awaFe7qjL0
+      title: I Believe in Love
+      text: When all else fails... "I Believe in Love"!
+    - id: I2rU4yY5cOU
+      title: Make It Through
+
+- slug: paradise
+  title: Paradise
+  short: Paradise
+  kind: Album
+  intro: Videos from the "Paradise" album.
+  videos:
+    - id: 87vTbr-lhWM
+      title: Paradise
+      text: Uplifting summer energy with a romantic vibe.
+    - id: 37yK1LNqzZk
+      title: Easy
+      text: >-
+        "Easy" was the first song I wrote about racial harmony. Growing up in the South,
+        I saw prejudice up close and personal. Even as a little girl, I felt strongly that
+        there was no room for it in my life. Now, thankfully, so many people have overcome
+        this hatred. So let's cut off that TV a minute, relax. How 'bout a little harmony?
+    - id: 7tsvaf3xYBM
+      title: Everything to Me
+      text: Romantic love song with a bossa groove!
+    - id: KfYrnpLXhjY
+      title: Move
+      text: Retro fun party song. She rocks... let's go!
+    - id: Z6klgqO4wrk
+      title: Good Love
+      text: Soulful, sultry song about a woman's self-empowerment and standing her ground... not takin' nothin' from no one.
+    - id: FDhKxOqNy9U
+      title: Feel for You
+      text: Romantic song about really connecting with someone...
+    - id: Lmmi0ifdViE
+      title: Outside Lookin' In (Remix)
+      text: A fresh, energetic remix and a powerful anthem for anyone who's ever felt like an outsider looking for their place in the world.
+    - id: QJXVRWnRkUo
+      title: Ooh La La
+      text: Retro, flirty, fun, sexy song about anticipating love.
+
+- slug: shelter
+  title: Shelter
+  short: Shelter
+  kind: Collection
+  intro: Inspirational and spiritual songs to help you find shelter from the storm.
+  videos:
+    - id: P98pH9tGZ0w
+      title: Shelter
+      text: Title song from Tamara's "Shelter" album. Both inspirational and spiritual, this song helps you find "Shelter" from the storm.
+    - id: 06x1QBSvnoA
+      title: Call Jesus
+      text: Overwhelmed? Down and out? Full of fear and doubt? Who ya' gonna call? "Call Jesus"! Tamara lends her talents to help people know where to turn when they need help.
+    - id: F257mesdBBs
+      title: Freedom Flame
+      text: A salute to Peace, Unity, Love, and FREEDOM! We hope you enjoy the smooth vocals and beautiful instrumentals.
+    - id: IygUP0SQsAg
+      title: The Lord's Prayer
+      text: Let this inspire you to keep the faith!
+    - id: rM-m-rqBj4k
+      title: The Lord's Prayer (Instrumental)
+      text: The captivating piano playing of this instrumental version of The Lord's Prayer.
+    - id: RemN5PknKGk
+      title: Love Plan
+      text: Lyric video for the single "Love Plan" that welcomes love to lead the way!
+    - id: S8MRWHdP3Fk
+      title: Little More Love Remix
+      text: A fun, upbeat, and inspirational dance song about unity.
+    - id: 9awaFe7qjL0
+      title: I Believe in Love
+      text: When all else fails... "I Believe in Love"!
+
+- slug: let-it-go
+  title: Let It Go
+  short: Let It Go
+  kind: EP
+  year: 2021
+  cover: /images/let-it-go-cover.jpg
+  intro: >-
+    "Let It Go" is a blend of inspirational lyrics and fun-loving beats. Journey with
+    these upbeat songs and their positive vibe. Coming from the heart, Tamara's music
+    uplifts, encourages and entertains the listener. Dance your cares away and "Let It Go"!
+    Released June 18, 2021.
+  credit_images:
+    - src: /images/let-it-go-press.jpg
+      alt: "Let It Go EP press sheet: track list, the story behind It's Your Life (Believe), and musician credits"
+    - src: /images/let-it-go-credits.jpg
+      alt: "Let It Go EP full credits"
+  videos:
+    - id: R72elF2Vmus
+      title: Let It Go
+      text: Whether it's stress from work or challenges in life, when you've done your best... time to Let It Go!
+    - id: S8MRWHdP3Fk
+      title: Little More Love
+      text: An uplifting message of love and unity.
+    - id: Jj6f4Yt9dso
+      title: Have It All
+      text: A sentimental song about a mother and son's bond through the years.
+    - id: MXAu3gYhrqI
+      title: It's Your Life (Believe)
+      text: Dare to be yourself and use the power of your mind to create the life you want!
+
+- slug: freedom
+  title: Freedom
+  short: Freedom
+  kind: EP
+  intro: Videos from the "Freedom" EP.
+  credits: Special thanks to Kent Steel for all the instrumentation on the Freedom EP. Freedom Remix features Coleman Murphy on lead guitar.
+  videos:
+    - id: S7ViMKgwpmg
+      title: Freedom (Remix)
+    - id: y-OBFobgrnY
+      title: Play
+    - id: Sv96B4dp36w
+      title: One People
+    - id: kaM8pmkaYsM
+      title: Whole New World
+  playlist: PLbHcuzIBB7DB_vE4xsfhtCct0FgOU8Dvx
+
+- slug: new-world
+  title: A New World
+  short: New World
+  kind: EP
+  intro: Videos from the "A New World" EP.
+  credits: "Special thanks and credit: Freddy Tripp (keys, programmed drums and bass), Coleman Murphy (guitar), Tim Gordon (sax on Let Love Show)."
+  videos:
+    - id: gjP6tZjnsMU
+      title: Change Gotta Come
+      text: >-
+        A song in deep reflection of our struggle with social divide, racial injustice and
+        prejudices we must heal! After hearing of the horrific murder of Mr. George Floyd, I had
+        to find a way to stand up for justice for my black and brown brothers and sisters. Enough
+        is enough! Deep inside our hearts, we know we are all deserving of fair treatment
+        regardless of the color of our skin. I have a dream too, this change will come!
+    - id: 2Tg4TVe7PPQ
+      title: A New World
+      text: >-
+        The morning I wrote "A New World", I had no idea I was even going to write a song. After
+        my prayer and meditation, I went upstairs to work on music, and somehow got the "message".
+        In two hours, it was written. Honestly, I just took dictation. It was truly a gift to me,
+        and I hope it is a gift for you also. Still we must hold, in faith, in hope, in trust,
+        that we will create a new, better "normal". Not only for ourselves, for the children.
+    - id: MiJ-JdLU864
+      title: Let Love Show
+      text: Enjoy the bluesy saxophone on the original version of Let Love Show!
+    - id: 6vg6DxIG-HU
+      title: Shelter in Place
+      text: >-
+        We are all at home alone, together! This song was inspired by the enormous help it was
+        to have Governor Cuomo there every day to update me on what the hey was going on out
+        there, while I "sheltered in place" during the Covid-19 pandemic. We WILL get through
+        this, together!
+
+- slug: singles
+  title: Singles
+  short: Singles
+  kind: Singles
+  intro: Standalone singles, from the Soulful Summer Music Series to The Lord's Prayer.
+  videos:
+    - id: fltYTL8utxE
+      title: Together We Stand
+      text: >-
+        Written to inspire unity, especially in America, Tamara's home she loves! The saxophone
+        complements her smoky low vocals and the excellent musicians deliver a stellar performance
+        on this upbeat tune. Let the craziness go for a minute and just enjoy the soulful, bluesy,
+        jazzy upbeat vibes!
+    - id: ROKIx9ycPMg
+      title: Shine On
+      text: A funky, upbeat dance song, and some fans say it's Tamara's best yet! The second release from the Soulful Summer Music Series.
+    - id: kgT7nXEu8Yw
+      title: Just a Little Time
+      text: >-
+        Take a moment, slow down, and let the smooth vibes wash over you. Featuring Jamie
+        Hendrickson on guitar, Michael Tillis on drums, Thompson Knoles on piano and synth bass,
+        and Ben Colvin on saxophone.
+    - id: SLrN3ORgGow
+      title: Life
+      text: >-
+        A catchy tune about life and how we are all tied to one another and the elements, set to
+        a funky upbeat rhythm. Credit and thanks to Frankie Chancellor (piano, organ and mix),
+        Jeff Zimmerman (guitar), Brian Haimbach (backup vocals), and Tom Kenyan for teaching
+        "Chant of the Elements": El, Ka, Leem, Om (Earth, Fire, Water and Air).
+      link: https://tamaralwilson.hearnow.com/life
+    - id: IygUP0SQsAg
+      title: The Lord's Prayer
+      text: >-
+        The music to The Lord's Prayer came to me out of the blue. Early one morning I awoke to
+        the sound of music playing in my mind, and soon realized it was the music to The Lord's
+        Prayer. I spent the next eight days, morning, noon and night, recording what I was hearing.
+        With the help of my studio engineer, Tim Norris, it was ready for production. Tom Rule did
+        an outstanding job on piano, Zack Crawford programmed an awesome hip-hop groove and brought
+        it together in the mix, Joey Stuckey laid down bass, and Doug Diamond did the final polish
+        with the mastering. Bringing the music to this powerful prayer to life is truly an honor.
+    - id: rM-m-rqBj4k
+      title: The Lord's Prayer (Instrumental)
+      text: The instrumental version of The Lord's Prayer.
+    - id: F257mesdBBs
+      title: Freedom Flame
+      text: >-
+        To Peace, To Love, To Unity, To FREEDOM! Special thanks to Freddy Tripp (keys, programmed
+        drums and bass), Coleman Murphy (guitar) and Tim Gordon (sax).
+    - id: M2Dh6bFuN0g
+      title: Little More Love
+      text: An uplifting message of love and unity.
+    - id: 7StYs-hwu3c
+      title: Time
+      text: '"Time is on our side" in this uplifting single.'
+    - id: hkbUgS8jTpA
+      title: I and the Father
+      text: >-
+        I so wanted to honor the Divine Feminine, and welcome again the Divine Masculine into my
+        life. After praying to know the right words to say, "I and the Father" just seemed to flow
+        with ease. The video is simply beautiful.

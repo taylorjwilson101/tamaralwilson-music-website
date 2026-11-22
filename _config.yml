@@ -1,0 +1,31 @@
+# Site settings — edit these and GitHub Pages rebuilds automatically.
+title: Tamara L. Wilson Music
+tagline: Soulful pop, R&B and feel-good songs from North Carolina
+description: >-
+  Official site of Tamara L. Wilson, singer/songwriter from North Carolina.
+  Soulful pop and R&B with a message of love, unity and positive vibes.
+url: "https://tamaralwilson.com"
+baseurl: ""
+
+# Links used across the site
+links:
+  youtube: https://www.youtube.com/channel/UCBEroAYgA6IybS4PHWhUlNw
+  jango: https://www.jango.com/music/Tamara+L+Wilson
+  buy_pop_collection: https://tamaralwilson.hearnow.com/pop-collection
+  buy_life: https://tamaralwilson.hearnow.com/life
+
+# Contact form. Create a free form at https://formspree.io, then paste its ID
+# (the part after /f/ in the form URL, e.g. "xyzabcd") below.
+# Until then, the contact page shows the email address below instead (if set).
+formspree_id: ""
+contact_email: ""
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

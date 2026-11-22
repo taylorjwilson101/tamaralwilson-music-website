@@ -1,0 +1,19 @@
+outreach:
+  id: tYf9nwWQV20
+  title: Homeless Outreach Theme Song
+  text: "I collaborated with VOICE to make a theme song for the homeless outreach in Hickory, NC. Check out this video and together, let's make a meaningful impact!"
+  link: http://voiceclubnc.org/
+
+interviews:
+  - id: kqAyVlKZfAg
+    title: Celtica Radio Interview
+    text: Interview with Bill Everatt for Celtica Radio. Original airdate May 9th, 2020.
+  - id: Ux8DvdOCqfs
+    title: Big Blend Radio Interview
+    text: Tamara chats about her music career and her songwriting process. Original airdate August 23, 2021.
+
+downloads:
+  - title: Play
+    file: /audio/play-tamara-l-wilson.mp3
+  - title: The Lord's Prayer
+    file: /audio/the-lords-prayer-tamara-l-wilson.mp3

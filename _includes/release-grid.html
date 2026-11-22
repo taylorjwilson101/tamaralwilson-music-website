@@ -1,0 +1,16 @@
+<ul class="release-grid">
+  {% for r in site.data.releases %}
+  <li>
+    <a href="{{ '/' | append: r.slug | relative_url }}">
+      {% if r.cover and r.cover_wide != true %}
+      <img src="{{ r.cover | relative_url }}" alt="" loading="lazy">
+      {% else %}
+      <img src="https://i.ytimg.com/vi/{{ r.videos[0].id }}/mqdefault.jpg" alt="" loading="lazy" class="thumb">
+      {% endif %}
+      <span class="rg-kind">{{ r.kind }}</span>
+      <span class="rg-title">{{ r.title }}</span>
+      <span class="rg-count">{{ r.videos | size }} videos</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
