@@ -1,11 +1,34 @@
 ---
+layout: default
+title: Contact
 permalink: /contact
-sitemap: false
+description: Get in touch with Tamara L. Wilson about purchasing CDs or upcoming events.
 ---
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<title>Redirecting…</title>
-<link rel="canonical" href="{{ '/connect' | absolute_url }}">
-<meta http-equiv="refresh" content="0; url={{ '/connect' | relative_url }}">
-<meta name="robots" content="noindex">
-</head><body><p><a href="{{ '/connect' | relative_url }}">Continue to the Connect page</a></p></body></html>
+<section class="wrap section contact">
+  <div>
+    <p class="eyebrow">Contact</p>
+    <h1>Drop me a line</h1>
+    <p class="lede">For info on purchasing CDs or upcoming events. Hope to hear from you soon!</p>
+    <p class="muted"><em>Music is the strongest form of magic.</em></p>
+  </div>
+
+  {% if site.formspree_id != "" %}
+  <form class="card form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+    <label>Name <input name="name" autocomplete="name" required></label>
+    <label>Email <input type="email" name="email" autocomplete="email" required></label>
+    <label>Message <textarea name="message" rows="5"></textarea></label>
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn" type="submit">Send</button>
+  </form>
+  {% elsif site.contact_email != "" %}
+  <div class="card">
+    <p>Email Tamara directly:</p>
+    <p><a class="btn" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a></p>
+  </div>
+  {% else %}
+  <div class="card">
+    <p>Find Tamara online:</p>
+    <p><a class="btn" href="{{ site.links.youtube }}">YouTube</a> <a class="btn ghost" href="{{ site.links.jango }}">Jango</a></p>
+  </div>
+  {% endif %}
+</section>
