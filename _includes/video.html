@@ -1,16 +1,24 @@
 {% comment %}
-  Click-to-play YouTube video. Shows a thumbnail first so pages load fast;
-  the real player loads only when someone presses play. Without JavaScript
-  it's a plain link to YouTube.
+  One video row, laid out like the original: the video on one side and the
+  title + description on the other, alternating left/right down the page.
+  The YouTube player loads only when someone presses play (faster pages);
+  without JavaScript it's a plain link to YouTube.
   Usage: {% include video.html v=video %}  (video has id, title, text, link)
 {% endcomment %}
-<article class="video">
-  <a class="yt" href="https://www.youtube.com/watch?v={{ include.v.id }}" data-id="{{ include.v.id }}" data-title="{{ include.v.title | escape }}">
-    <img src="https://i.ytimg.com/vi/{{ include.v.id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
-    <span class="play" aria-hidden="true"></span>
-    <span class="sr-only">Play video: {{ include.v.title }}</span>
-  </a>
-  <h3>{{ include.v.title }}</h3>
-  {% if include.v.text %}<p>{{ include.v.text }}</p>{% endif %}
-  {% if include.v.link %}<p><a class="text-link" href="{{ include.v.link }}">Get the song &rarr;</a></p>{% endif %}
-</article>
+<div class="video-row{% if include.full %} full{% endif %}">
+  <div class="yt-wrap">
+    <a class="yt" href="https://www.youtube.com/watch?v={{ include.v.id }}" data-id="{{ include.v.id }}" data-title="{{ include.v.title | escape }}">
+      <img src="https://i.ytimg.com/vi/{{ include.v.id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+      <span class="yt-title" aria-hidden="true">{{ include.v.yt_title | default: include.v.title }}</span>
+      <span class="play" aria-hidden="true"></span>
+      <span class="sr-only">Play video: {{ include.v.title }}</span>
+    </a>
+  </div>
+  {% if include.v.title_hidden != true or include.v.text %}
+  <div class="copy">
+    {% if include.v.title_hidden != true %}<h4 class="title-rule">{{ include.v.title }}</h4>{% endif %}
+    {% if include.v.text %}<p>{{ include.v.text }}</p>{% endif %}
+    {% if include.v.link %}<p><a class="text-link" href="{{ include.v.link }}">{{ include.v.link }}</a></p>{% endif %}
+  </div>
+  {% endif %}
+</div>

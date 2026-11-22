@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="icon" href="{{ '/images/favicon.png' | relative_url }}">
   {% seo %}
@@ -13,24 +13,24 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="{{ '/' | relative_url }}">Tamara L. Wilson</a>
+    <div class="header-inner">
+      <a class="mobile-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <ul>
-          <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
+          <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}><span>Home</span></a></li>
+          {% for r in site.data.releases %}
+          <li><a href="{{ '/' | append: r.slug | relative_url }}" {% if page.release == r.slug %}aria-current="page"{% endif %}><span>{{ r.short }}</span></a></li>
+          {% endfor %}
           <li class="has-sub">
-            <a href="{{ '/music' | relative_url }}" {% if page.url == '/music' or page.release %}aria-current="page"{% endif %}>Music</a>
+            <button class="more-btn{% if page.url == '/about' or page.url == '/contact' %} current{% endif %}" aria-haspopup="true"><span>More</span></button>
             <ul class="sub">
-              {% for r in site.data.releases %}
-              <li><a href="{{ '/' | append: r.slug | relative_url }}">{{ r.short }}</a></li>
-              {% endfor %}
+              <li><a href="{{ '/about' | relative_url }}" {% if page.url == '/about' %}aria-current="page"{% endif %}>About</a></li>
+              <li><a href="{{ '/contact' | relative_url }}" {% if page.url == '/contact' %}aria-current="page"{% endif %}>Contact</a></li>
             </ul>
           </li>
-          <li><a href="{{ '/about' | relative_url }}" {% if page.url == '/about' %}aria-current="page"{% endif %}>About</a></li>
-          <li><a href="{{ '/contact' | relative_url }}" {% if page.url == '/contact' %}aria-current="page"{% endif %}>Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -41,18 +41,13 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div>
-        <p class="brand">Tamara L. Wilson Music</p>
-        <p class="muted">Music is the strongest form of magic.</p>
+    <div class="wrap">
+      <div class="footer-inner">
+        <a class="yt-icon" href="{{ site.links.youtube }}" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+        </a>
+        <p>Copyright &copy; {{ site.time | date: '%Y' }} Tamara L. Wilson Music - All Rights Reserved.</p>
       </div>
-      <ul class="footer-links">
-        <li><a href="{{ site.links.youtube }}">YouTube</a></li>
-        <li><a href="{{ site.links.jango }}">Jango</a></li>
-        <li><a href="{{ site.links.buy_pop_collection }}">Buy music</a></li>
-        <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
-      </ul>
-      <p class="muted small">&copy; {{ site.time | date: '%Y' }} Tamara L. Wilson Music. All rights reserved.</p>
     </div>
   </footer>
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
