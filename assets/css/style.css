@@ -229,3 +229,38 @@ details.credits[open] summary .when-closed { display: none; }
 /* Press release (All About Love page) */
 .press-release p { color: var(--muted); }
 .press-release .quote-line { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--text); }
+
+/* Homepage info row: small labeled columns under her name */
+.info-row { display: flex; flex-wrap: wrap; gap: 18px 40px; margin: 28px 0 32px; padding-top: 22px; border-top: 1px solid var(--line); max-width: 560px; }
+.info-row dt { font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.info-row dd { margin: 0; font-size: 1rem; }
+.info-row a { text-decoration: none; border-bottom: 1px solid var(--line); }
+.info-row a:hover { border-color: var(--accent); }
+
+/* Album color moods: each album page glows in a color from its cover */
+.release-hero.has-mood {
+  background:
+    radial-gradient(60% 90% at 85% 25%, color-mix(in srgb, var(--mood) 42%, transparent), transparent 70%),
+    radial-gradient(55% 80% at 5% 100%, color-mix(in srgb, var(--mood2) 26%, transparent), transparent 70%),
+    var(--bg);
+  border-bottom-color: color-mix(in srgb, var(--mood) 45%, var(--line));
+}
+.release-hero.has-mood .cover img { box-shadow: 0 30px 90px color-mix(in srgb, var(--mood) 45%, transparent), 0 10px 30px rgba(0,0,0,.5); }
+.release-hero.has-mood .eyebrow { color: color-mix(in srgb, var(--mood) 55%, #fff); }
+
+/* Albums without cover art: their first video still fills the right side, fading into the color */
+.release-hero { position: relative; overflow: hidden; }
+.release-hero .release-head { position: relative; }
+.release-art { display: none; }
+@media (min-width: 860px) {
+  .release-art { display: block; position: absolute; top: 0; right: 0; bottom: 0; width: 55%; }
+  .release-art img[style*="object-position"] { transform: scale(1.35); transform-origin: right bottom; }
+  .release-art img {
+    width: 100%; height: 100%; object-fit: cover; opacity: .75;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%), linear-gradient(to top, transparent 0%, #000 30%);
+    -webkit-mask-composite: source-in;
+            mask-image: linear-gradient(to right, transparent 0%, #000 45%), linear-gradient(to top, transparent 0%, #000 30%);
+            mask-composite: intersect;
+  }
+  .release-head.no-cover > div { max-width: 52%; padding: 40px 0; }
+}

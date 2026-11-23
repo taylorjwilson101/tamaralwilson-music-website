@@ -5,6 +5,8 @@
 # To add a video, copy an existing "- id:" block and change it.
 
 - slug: pop-collection
+  mood: "#e8913f"     # page color (from the cover)
+  mood2: "#9b4fc4"
   title: Pop Collection Remastered
   short: Pop Collection
   kind: Album
@@ -94,6 +96,8 @@
       text: A funky, upbeat dance song, and some fans say it's Tamara's best yet! The second release from Tamara's Soulful Summer Music Series.
 
 - slug: all-about-love
+  mood: "#d63c8f"     # page color (from the cover)
+  mood2: "#6b3fd0"
   title: All About Love
   short: All About Love
   kind: Album
@@ -139,6 +143,10 @@
       text: This R&B/Pop crossover song features Macon, GA's blind blues guitar legend Joey Stuckey, who plays and programs every instrument. "Why" can't love have the last word?
 
 - slug: y-o-k-o-b
+  art_video: I2rU4yY5cOU   # which video still to show at the top of the page
+  art_position: "center 100%"   # show the bottom of that still
+  mood: "#e0a040"     # page color (from the cover)
+  mood2: "#3aa7b8"
   title: Your Own Kind of Beautiful
   short: Y.O.K.O.B.
   kind: EP
@@ -158,6 +166,8 @@
       title: Make It Through
 
 - slug: paradise
+  mood: "#f0a030"     # page color (from the cover)
+  mood2: "#1f8fa3"
   title: Paradise
   short: Paradise
   kind: Album
@@ -193,6 +203,8 @@
       text: Retro, flirty, fun, sexy song about anticipating love.
 
 - slug: shelter
+  mood: "#5d7aa8"     # page color (from the cover)
+  mood2: "#8a7fc0"
   title: Shelter
   short: Shelter
   kind: Collection
@@ -224,6 +236,8 @@
       text: When all else fails... "I Believe in Love"!
 
 - slug: let-it-go
+  mood: "#3f9fd0"     # page color (from the cover)
+  mood2: "#d9b98a"
   title: Let It Go
   short: Let It Go
   kind: EP
@@ -254,6 +268,9 @@
       text: Dare to be yourself and use the power of your mind to create the life you want!
 
 - slug: freedom
+  art_video: Sv96B4dp36w   # which video still to show at the top of the page
+  mood: "#e0a13a"     # page color (from the cover)
+  mood2: "#c0602a"
   title: Freedom
   short: Freedom
   kind: EP
@@ -271,6 +288,9 @@
   playlist: PLbHcuzIBB7DB_vE4xsfhtCct0FgOU8Dvx
 
 - slug: new-world
+  art_video: 2Tg4TVe7PPQ   # which video still to show at the top of the page
+  mood: "#c0443a"     # page color (from the cover)
+  mood2: "#e0a040"
   title: A New World
   short: New World
   kind: EP
@@ -305,6 +325,8 @@
         this, together!
 
 - slug: singles
+  mood: "#c9566e"     # page color (from the cover)
+  mood2: "#e5a33a"
   title: Singles
   short: Singles
   kind: Singles

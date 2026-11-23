@@ -2,7 +2,12 @@
 layout: default
 ---
 {% assign r = site.data.releases | where: "slug", page.release | first %}
-<section class="release-hero">
+<section class="release-hero{% if r.mood %} has-mood{% endif %}"{% if r.mood %} style="--mood: {{ r.mood }}; --mood2: {{ r.mood2 | default: r.mood }}"{% endif %}>
+  {% if r.cover == nil and r.videos.size > 0 %}
+  <div class="release-art" aria-hidden="true">
+    <img{% if r.art_position %} style="object-position: {{ r.art_position }}"{% endif %} src="https://i.ytimg.com/vi/{{ r.art_video | default: r.videos[0].id }}/maxresdefault.jpg" alt="" onload="if(this.naturalWidth<=120){this.onload=null;this.src='https://i.ytimg.com/vi/{{ r.art_video | default: r.videos[0].id }}/hqdefault.jpg'}" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ r.art_video | default: r.videos[0].id }}/hqdefault.jpg'">
+  </div>
+  {% endif %}
   <div class="wrap release-head{% if r.cover == nil %} no-cover{% endif %}">
     {% if r.cover %}
     <a class="cover{% if r.cover_wide %} wide{% endif %}" href="{% if r.buy %}{{ r.buy }}{% else %}{{ r.cover | relative_url }}{% endif %}">
