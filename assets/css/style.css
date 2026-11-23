@@ -87,36 +87,48 @@ p { margin: 0 0 1em; }
 }
 
 /* Hero */
-.hero { position: relative; overflow: hidden; background: var(--bg); }
+.hero {
+  position: relative; overflow: hidden;
+  /* one strong color washing over the hero, like a poster: violet from the Pop Collection art */
+  background:
+    radial-gradient(55% 90% at 78% 40%, rgba(170, 92, 220, .55), transparent 70%),
+    radial-gradient(40% 60% at 8% 95%, rgba(232, 145, 63, .18), transparent 70%),
+    linear-gradient(100deg, #110a18 0%, #1d1029 45%, #3a1a55 100%);
+}
 .hero-inner { display: grid; gap: 0; align-items: center; }
 .hero-copy { position: relative; z-index: 1; padding: 8px 0 56px; }
+.hero-name { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: .01em; line-height: .95; font-size: clamp(2.6rem, 6.4vw, 4.8rem); margin-bottom: .35em; }
 .hero-line { font-family: var(--serif); font-size: clamp(1.3rem, 2.6vw, 1.75rem); color: var(--text); margin-bottom: .6em; }
+.hero .eyebrow { color: #e7b8ff; }
+.hero .lede { color: #d8c9e2; }
+.hero .info-row { border-top-color: rgba(255,255,255,.14); }
+.hero .info-row dt { color: #e7b8ff; }
+.hero .info-row a { border-bottom-color: rgba(255,255,255,.22); }
 
-/* Photo: no frame. It's toned to the page's own brown and cream, bleeds off the edge,
-   and fades into the background so she seems to come out of the dark. */
+/* Photo: head and shoulders, tinted to the hero color, fading into it (no frame) */
 .hero-photo { margin: 0 -16px; }
 .hero-photo img {
-  width: 100%; height: auto; aspect-ratio: 1200 / 1360; object-fit: cover; object-position: 60% 20%;
-  max-height: 78vh;
+  width: 100%; height: auto; aspect-ratio: 1000 / 1133; object-fit: cover; object-position: 55% 15%; max-height: 70vh;
+  mix-blend-mode: lighten;
   -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
           mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
 }
 @media (max-width: 859px) {
-  .hero-photo { order: -1; }            /* photo first on phones, then her name */
-  .hero-copy { margin-top: -64px; }     /* name rises into the faded bottom of the photo */
+  .hero-photo { order: -1; }
+  .hero-copy { margin-top: -64px; }
 }
 @media (min-width: 700px) and (max-width: 859px) { .hero-photo { margin: 0 -32px; } }
 @media (min-width: 860px) {
-  .hero { min-height: min(86vh, 760px); display: flex; align-items: center; }
+  .hero { min-height: min(78vh, 680px); display: flex; align-items: center; }
   .hero > .wrap { width: 100%; }
-  .hero-inner { grid-template-columns: 1fr 1fr; }
-  .hero-copy { padding: 72px 0 88px; }
-  .hero-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 54%; margin: 0; }
+  .hero-inner { grid-template-columns: 1.25fr .75fr; }
+  .hero-copy { padding: 64px 0 72px; }
+  .hero-photo { position: absolute; top: 10%; bottom: 0; right: 6%; width: 34%; margin: 0; }
   .hero-photo img {
-    width: 100%; height: 100%; max-height: none; aspect-ratio: auto;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 42%), linear-gradient(to top, transparent 0%, #000 22%);
+    width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-position: 50% 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 25%, #000 80%, transparent 100%), linear-gradient(to top, transparent 0%, #000 22%, #000 88%, transparent 100%);
     -webkit-mask-composite: source-in;
-            mask-image: linear-gradient(to right, transparent 0%, #000 42%), linear-gradient(to top, transparent 0%, #000 22%);
+            mask-image: linear-gradient(to right, transparent 0%, #000 25%, #000 80%, transparent 100%), linear-gradient(to top, transparent 0%, #000 22%, #000 88%, transparent 100%);
             mask-composite: intersect;
   }
 }
@@ -264,3 +276,24 @@ details.credits[open] summary .when-closed { display: none; }
   }
   .release-head.no-cover > div { max-width: 52%; padding: 40px 0; }
 }
+
+/* Music tiles: one consistent square treatment, washed with each album's color */
+.release-grid .rg-art { position: relative; display: block; aspect-ratio: 1; border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; background: var(--surface);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--mood, #000) 22%, transparent); transition: transform .25s, box-shadow .25s; }
+.release-grid .rg-art img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; margin: 0; border-radius: 0; }
+.release-grid .rg-art::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, color-mix(in srgb, var(--mood, #000) 55%, transparent) 0%, transparent 55%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); border-radius: inherit; }
+.release-grid a:hover .rg-art { transform: translateY(-4px); box-shadow: 0 24px 50px color-mix(in srgb, var(--mood, #000) 40%, transparent); }
+.release-grid a:hover { background: none; }
+.release-grid .rg-kind { color: color-mix(in srgb, var(--mood, var(--accent)) 60%, #fff); }
+
+/* About page */
+.about-head { padding-bottom: 0; }
+.about-head h1 { margin-bottom: .3em; }
+.about-photo { width: 100%; border-radius: 4px; }
+.about-quote { padding: 72px 0; background: radial-gradient(60% 120% at 50% 0%, rgba(240,169,59,.10), transparent 70%), var(--surface); border-block: 1px solid var(--line); text-align: center; }
+.about-quote blockquote { margin: 0 auto; max-width: 30ch; font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 3vw, 2.1rem); line-height: 1.35; }
+.photo-strip { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+.photo-strip img { width: 100%; height: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+@media (max-width: 560px) { .photo-strip { grid-template-columns: 1fr 1fr; } .photo-strip li:last-child { display: none; } }

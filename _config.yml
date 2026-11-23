@@ -20,6 +20,15 @@ links:
 formspree_id: ""
 contact_email: ""
 
+# Picture shown when someone shares a link to the site (Facebook, texts, etc.)
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/share-card.jpg
+twitter:
+  card: summary_large_image
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap

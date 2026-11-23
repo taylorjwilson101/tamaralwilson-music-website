@@ -1,12 +1,16 @@
+{% comment %} Album tiles: same square shape for every album, tinted with the album's own color. {% endcomment %}
 <ul class="release-grid">
   {% for r in site.data.releases %}
+  {% assign vid = r.art_video | default: r.videos[0].id %}
   <li>
-    <a href="{{ '/' | append: r.slug | relative_url }}">
-      {% if r.cover and r.cover_wide != true %}
-      <img src="{{ r.cover | relative_url }}" alt="" loading="lazy">
-      {% else %}
-      <img src="https://i.ytimg.com/vi/{{ r.videos[0].id }}/mqdefault.jpg" alt="" loading="lazy" class="thumb">
-      {% endif %}
+    <a href="{{ '/' | append: r.slug | relative_url }}"{% if r.mood %} style="--mood: {{ r.mood }}"{% endif %}>
+      <span class="rg-art">
+        {% if r.cover and r.cover_wide != true %}
+        <img src="{{ r.cover | relative_url }}" alt="" loading="lazy">
+        {% else %}
+        <img src="https://i.ytimg.com/vi/{{ vid }}/maxresdefault.jpg" alt="" loading="lazy"{% if r.art_position %} style="object-position: {{ r.art_position }}"{% endif %} onload="if(this.naturalWidth<=120){this.onload=null;this.src='https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg'}" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg'">
+        {% endif %}
+      </span>
       <span class="rg-kind">{{ r.kind }}</span>
       <span class="rg-title">{{ r.title }}</span>
       <span class="rg-count">{{ r.videos | size }} videos</span>
