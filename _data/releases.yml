@@ -34,11 +34,29 @@
     - Little More Love Remix
     - Let It Go
     - Outside Lookin' In Remix
-  credit_images:
-    - src: /images/pop-credits-1.webp
-      alt: "Pop Collection credits, part 1: musicians for You and Me; Feel for You, Easy, Paradise and Everything to Me; Let Love Show (Samba Remix); Why and Little More Love Remix; Shine On, Just a Little Time and Together We Stand"
-    - src: /images/pop-credits-2.webp
-      alt: "Pop Collection credits, part 2"
+  credit_lines:   # from the album's credit sheets
+    - songs: You and Me
+      people: Coleman Murphy (guitar), Jason DeCristofaro (piano), Zack Page (bass), James Kalen (drums)
+    - songs: Feel for You, Easy, Paradise, Everything to Me
+      people: Duncan Stitt (piano, engineer), Richie Cavanaugh (guitar), Larry Lerma (bass), Ralph Gilmore (drums)
+    - songs: Let Love Show (Samba Remix)
+      people: Jake Moss (flamenco guitar), Paul McIntire (violin), Jason DeCristofaro (piano, congas), Zack Page (bass), James Kalen (drums)
+    - songs: Why, Little More Love Remix
+      people: Joey Stuckey (all instrumentation)
+    - songs: Shine On, Just a Little Time, Together We Stand
+      people: Jamie Hendrickson (guitar), Michael Tillis (drums), Thompson Knoles (piano, synth bass), Ben Colvin (saxophone)
+    - songs: Talkin' to You
+      people: Jason DeCristofaro (piano), Jake Moss (flamenco guitar), Paul McIntire (violin), Tom Rule (strings), Joey Stuckey (bass), Rick Murray (drums)
+    - songs: Your Own Kind of Beautiful, Love Plan
+      people: Jason Homan (all instrumentation)
+    - songs: All About Love
+      people: Datrian Johnson (guest vocalist), Coleman Murphy (sitar, guitar), Jason DeCristofaro (piano), Zack Page (bass), James Kalen (drums)
+    - songs: Chemistry
+      people: Freddy Tripp (trumpet, trombone, piano), Coleman Murphy (guitar), Terry Peoples (bass), Rick Murray (drums)
+    - songs: Let It Go
+      people: Freddy Tripp (keyboard, programming), Coleman Murphy (guitar), Tim Loftin (bass)
+    - songs: Outside Lookin' In Remix
+      people: Frankie Chancellor (piano), Jeff Zimmerman (guitar), Larry Lerma (bass), Ralph Gilmore (drums)
   videos:
     - id: cbu5mu8H1_I
       title: You and Me
@@ -107,11 +125,6 @@
   intro: >-
     Soulful Pop/R&B songs that share Tamara's spicy real-life stories, released
     December 9, 2022. Produced, recorded, mixed and mastered by Phil Ludwig.
-  credits: >-
-    Jake Moss (flamenco guitar), Paul McIntire (violin), Jason DeCristofaro (piano/congas),
-    Coleman Murphy (sitar/guitar), Freddy Tripp (trumpet/trombone/piano), Tom Rule (strings),
-    Zack Page (bass), Terry Peoples (bass), James Kalen (drums), Rick Murray (drums), and
-    Joey Stuckey (bass and all instrumentation on "Why"). Sound engineering and editing by Tim Norris.
   press:
     headline: "Tamara L. Wilson's long-awaited album \"All About Love\" released December 9, 2022"
     paragraphs:
@@ -119,6 +132,29 @@
       - "The title track is a country/pop duet with the awesome talent of Datrian Johnson, guest vocalist. Phil Ludwig produced, recorded, mixed and mastered the album. Tamara shares, \"Phil was wonderful to work with; he helped take my music to a whole new level bringing his years of experience, unique and polished feel for music, and big city sound to the project.\" Tamara adds, \"And a special thanks to Tim Norris, sound engineer and editing.\""
     quote: "Some people are born talented, blessed with vocals that are beautiful and melodious... true talent... such a gem... a natural... Tamara's music brings a positive vibe to spread the Love!"
     quote_by: MySoundMusic
+  tracklist:   # from the album's back cover
+    - Let Love Show (Samba Remix)
+    - You and Me
+    - Talkin' to You
+    - All About Love
+    - Chemistry
+    - Love Loves Anyway
+    - Why
+  credit_lines:   # from the album's credit sheets and press release
+    - songs: Let Love Show (Samba Remix)
+      people: Jake Moss (flamenco guitar), Paul McIntire (violin), Jason DeCristofaro (piano, congas), Zack Page (bass), James Kalen (drums)
+    - songs: You and Me
+      people: Coleman Murphy (guitar), Jason DeCristofaro (piano), Zack Page (bass), James Kalen (drums)
+    - songs: Talkin' to You
+      people: Jason DeCristofaro (piano), Jake Moss (flamenco guitar), Paul McIntire (violin), Tom Rule (strings), Joey Stuckey (bass), Rick Murray (drums)
+    - songs: All About Love
+      people: Datrian Johnson (guest vocalist), Coleman Murphy (sitar, guitar), Jason DeCristofaro (piano), Zack Page (bass), James Kalen (drums)
+    - songs: Chemistry
+      people: Freddy Tripp (trumpet, trombone, piano), Coleman Murphy (guitar), Terry Peoples (bass), Rick Murray (drums)
+    - songs: Why
+      people: Joey Stuckey (all instrumentation)
+    - songs: Whole album
+      people: Phil Ludwig (producer; recorded, mixed and mastered), Tim Norris (sound engineering and editing)
   videos:
     - id: Pq9z9OEnXa8
       title: Let Love Show (Samba Remix)
@@ -151,7 +187,9 @@
   short: Y.O.K.O.B.
   kind: EP
   intro: Videos from the "Your Own Kind of Beautiful" EP.
-  credits: Special thanks to Jason Homan for ALL the instrumentation on the Your Own Kind of Beautiful EP!
+  credit_lines:
+    - songs: Whole EP
+      people: Jason Homan (all instrumentation)
   videos:
     - id: nloW898SKLI
       title: Your Own Kind of Beautiful
@@ -174,6 +212,11 @@
   short: Paradise
   kind: Album
   intro: Videos from the "Paradise" album.
+  credit_lines:   # from the Pop Collection credit sheets
+    - songs: Paradise, Easy, Everything to Me, Feel for You
+      people: Duncan Stitt (piano, engineer), Richie Cavanaugh (guitar), Larry Lerma (bass), Ralph Gilmore (drums)
+    - songs: Outside Lookin' In (Remix)
+      people: Frankie Chancellor (piano), Jeff Zimmerman (guitar), Larry Lerma (bass), Ralph Gilmore (drums)
   videos:
     - id: 87vTbr-lhWM
       title: Paradise
@@ -213,6 +256,15 @@
   short: Shelter
   kind: Collection
   intro: Inspirational and spiritual songs to help you find shelter from the storm.
+  credit_lines:
+    - songs: The Lord's Prayer
+      people: Tom Rule (piano), Zack Crawford (programming and mix), Joey Stuckey (bass), Tim Norris (studio engineer), Doug Diamond (mastering)
+    - songs: Freedom Flame
+      people: Freddy Tripp (keys, programmed drums and bass), Coleman Murphy (guitar), Tim Gordon (sax)
+    - songs: Love Plan, I Believe in Love
+      people: Jason Homan (all instrumentation)
+    - songs: Little More Love Remix
+      people: Joey Stuckey (keyboard, guitar, bass, drum programming), Freddy Tripp (trumpet, trombone)
   videos:
     - id: P98pH9tGZ0w
       title: Shelter
@@ -252,11 +304,22 @@
     these upbeat songs and their positive vibe. Coming from the heart, Tamara's music
     uplifts, encourages and entertains the listener. Dance your cares away and "Let It Go"!
     Released June 18, 2021.
-  credit_images:
-    - src: /images/let-it-go-press.webp
-      alt: "Let It Go EP press sheet: track list, the story behind It's Your Life (Believe), and musician credits"
-    - src: /images/let-it-go-credits.webp
-      alt: "Let It Go EP full credits"
+  tracklist:   # from the EP's press sheet
+    - It's Your Life (Believe)
+    - Little More Love Remix
+    - Let It Go
+    - Have It All
+  credit_lines:
+    - songs: It's Your Life (Believe)
+      people: Joey Stuckey (guitar, bass, drum programming), Tom Rule (piano, strings), Miguel Castro (drums)
+    - songs: Little More Love Remix
+      people: Joey Stuckey (keyboard, guitar, bass, drum programming), Freddy Tripp (trumpet, trombone)
+    - songs: Let It Go
+      people: Freddy Tripp (keyboards, programming), Coleman Murphy (guitars), Tim Loftin (bass)
+    - songs: Have It All
+      people: Freddy Tripp (keyboards, trumpet, programming), Coleman Murphy (guitars)
+    - songs: Whole EP
+      people: Doug Diamond, Diamondisc Audio (mix and mastering), Tim Norris, Touch Ford Studio (studio engineer), Tamara L. Wilson (songwriter, melody and lyrics, all vocals, artwork)
   videos:
     - id: R72elF2Vmus
       title: Let It Go
@@ -280,7 +343,11 @@
   short: Freedom
   kind: EP
   intro: Videos from the "Freedom" EP.
-  credits: Special thanks to Kent Steel for all the instrumentation on the Freedom EP. Freedom Remix features Coleman Murphy on lead guitar.
+  credit_lines:
+    - songs: Whole EP
+      people: Kent Steel (all instrumentation)
+    - songs: Freedom (Remix)
+      people: Coleman Murphy (lead guitar)
   videos:
     - id: S7ViMKgwpmg
       title: Freedom (Remix)
@@ -302,7 +369,11 @@
   short: New World
   kind: EP
   intro: Videos from the "A New World" EP.
-  credits: "Special thanks and credit: Freddy Tripp (keys, programmed drums and bass), Coleman Murphy (guitar), Tim Gordon (sax on Let Love Show)."
+  credit_lines:
+    - songs: Whole EP
+      people: Freddy Tripp (keys, programmed drums and bass), Coleman Murphy (guitar)
+    - songs: Let Love Show
+      people: Tim Gordon (sax)
   videos:
     - id: gjP6tZjnsMU
       title: Change Gotta Come
@@ -341,6 +412,17 @@
   short: Singles
   kind: Singles
   intro: Standalone singles, from the Soulful Summer Music Series to The Lord's Prayer.
+  credit_lines:
+    - songs: Together We Stand, Shine On, Just a Little Time
+      people: Jamie Hendrickson (guitar), Michael Tillis (drums), Thompson Knoles (piano, synth bass), Ben Colvin (saxophone), Phil Ludwig (producer, sound engineer), Tim Norris (sound engineer, editing)
+    - songs: Life
+      people: Frankie Chancellor (piano, organ, mix), Jeff Zimmerman (guitar), Brian Haimbach (backup vocals)
+    - songs: The Lord's Prayer
+      people: Tom Rule (piano), Zack Crawford (programming and mix), Joey Stuckey (bass), Tim Norris (studio engineer), Doug Diamond (mastering)
+    - songs: Freedom Flame
+      people: Freddy Tripp (keys, programmed drums and bass), Coleman Murphy (guitar), Tim Gordon (sax)
+    - songs: Little More Love
+      people: Featuring Jason Homan
   videos:
     - id: fltYTL8utxE
       title: Together We Stand

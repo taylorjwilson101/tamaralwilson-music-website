@@ -513,3 +513,21 @@ em { font-style: italic; }
   .poster-hero .info-row { margin: 22px 0 26px; padding-top: 18px; }
   .poster-hero .poster-label { margin-bottom: 20px; }
 }
+
+/* ---------- Album panels (Track list / Credits): one format for every album ---------- */
+.album .actions { margin-top: 28px; }
+.album-extras { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.album-extras details.more[open] { flex-basis: 100%; order: 2; }
+.panel { border-top: 1px solid var(--line); padding-top: 22px; max-width: 860px; }
+.panel .tracklist { columns: 2 240px; column-gap: 48px; margin: 0; padding-left: 1.9em; }
+.panel .tracklist li { font-family: var(--serif); font-size: 1.15rem; padding: 5px 0; break-inside: avoid; border-bottom: 1px solid var(--line); }
+.panel-note { margin: 14px 0 0; font-size: .82rem; color: var(--muted); font-style: italic; }
+.panel-links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 18px 0 0; font-size: .95rem; }
+.panel-label { font: 400 .68rem/1 var(--sans); letter-spacing: .28em; text-transform: uppercase; color: var(--accent); margin: 28px 0 12px; }
+.credit-list { margin: 0; display: grid; gap: 16px; }
+.credit-list > div { display: grid; gap: 4px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.credit-list dt { font-family: var(--serif); font-size: 1.15rem; color: var(--text); }
+.credit-list dd { margin: 0; font-size: .92rem; color: var(--muted); line-height: 1.65; }
+@media (min-width: 760px) { .credit-list > div { grid-template-columns: 240px 1fr; gap: 24px; } }
+.panel > .prose { color: var(--muted); max-width: 70ch; }
+.panel > .prose + .press-release, .credit-list + .prose { margin-top: 18px; }
