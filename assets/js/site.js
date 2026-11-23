@@ -9,24 +9,85 @@
   });
 })();
 
-// Click-to-play YouTube: swap the thumbnail for the real player on click.
-document.addEventListener('click', function (e) {
-  var link = e.target.closest && e.target.closest('a.yt');
-  if (!link || e.metaKey || e.ctrlKey || e.shiftKey) return;
-  e.preventDefault();
-  var frame = document.createElement('div');
-  frame.className = 'yt-frame';
-  var iframe = document.createElement('iframe');
-  iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(link.dataset.id) + '?autoplay=1&rel=0';
-  iframe.title = link.dataset.title || 'YouTube video';
-  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-  iframe.allowFullscreen = true;
-  frame.appendChild(iframe);
-  link.replaceWith(frame);
-});
+// Videos open full-screen over a dimmed page (thumbnails and the homepage Play button).
+// Esc, the close button or clicking outside closes it and stops the video.
+// Without JavaScript the links simply go to YouTube.
+(function () {
+  var box = document.createElement('dialog');
+  if (typeof box.showModal !== 'function') return; // very old browsers: links open YouTube
+  box.className = 'lightbox';
+  box.setAttribute('aria-label', 'Video');
+  box.innerHTML =
+    '<div class="lightbox-frame"></div>' +
+    '<p class="lightbox-title"></p>' +
+    '<button class="lightbox-close" type="button" aria-label="Close video">&times;</button>';
+  document.body.appendChild(box);
+  var frame = box.querySelector('.lightbox-frame');
+  var title = box.querySelector('.lightbox-title');
+  var opener = null;
 
+  function close() { if (box.open) box.close(); }
+  box.addEventListener('close', function () {
+    frame.innerHTML = '';                 // stops the video
+    document.documentElement.classList.remove('lightbox-open');
+    if (opener) opener.focus();
+  });
+  box.querySelector('.lightbox-close').addEventListener('click', close);
+  box.addEventListener('click', function (e) { if (e.target === box) close(); });
 
-// Gentle scroll-in for homepage posters (CSS keeps everything visible if this doesn't run).
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a.yt, a.yt-open');
+    if (!link || e.metaKey || e.ctrlKey || e.shiftKey || !link.dataset.id) return;
+    e.preventDefault();
+    opener = link;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(link.dataset.id) + '?autoplay=1&rel=0';
+    iframe.title = link.dataset.title || 'YouTube video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin'; // YouTube needs to know which site the player is on
+    frame.innerHTML = '';
+    frame.appendChild(iframe);
+    title.textContent = link.dataset.title || '';
+    document.documentElement.classList.add('lightbox-open');
+    box.showModal();
+    box.querySelector('.lightbox-close').focus();
+  });
+})();
+
+// Top bar takes on the color of the section underneath it as you scroll.
+// Sections set their color as --c ("R, G, B") or --m (a hex color).
+(function () {
+  var header = document.querySelector('.site-header');
+  var sections = document.querySelectorAll('.poster, .album');
+  if (!header || !sections.length || !window.CSS || !CSS.supports('color', 'color-mix(in srgb, red 50%, blue)')) return;
+  var current = null, ticking = false;
+  function colorOf(sec) {
+    var st = getComputedStyle(sec);
+    var c = st.getPropertyValue('--c').trim();
+    if (c) return 'rgb(' + c + ')';
+    var m = st.getPropertyValue('--m').trim();
+    return m || '';
+  }
+  function update() {
+    ticking = false;
+    var y = header.getBoundingClientRect().bottom + 2, found = null;
+    for (var i = 0; i < sections.length; i++) {
+      var r = sections[i].getBoundingClientRect();
+      if (r.top <= y && r.bottom > y) { found = sections[i]; break; }
+    }
+    if (found === current) return;
+    current = found;
+    var col = found ? colorOf(found) : '';
+    if (col) header.style.setProperty('--tint', col); else header.style.removeProperty('--tint');
+    header.classList.toggle('tinted', !!col);
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// Gentle scroll-in for posters (CSS keeps everything visible if this doesn't run).
 (function () {
   var els = document.querySelectorAll('.reveal');
   if (!els.length) return;

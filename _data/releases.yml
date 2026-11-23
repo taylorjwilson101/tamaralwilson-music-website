@@ -10,7 +10,7 @@
   title: Pop Collection Remastered
   short: Pop Collection
   kind: Album
-  cover: /images/pop-collection-cover.jpg
+  cover: /images/pop-collection-cover.webp
   buy: https://tamaralwilson.hearnow.com/pop-collection
   intro: >-
     Eighteen of Tamara's best, remastered and gathered in one place: soulful pop,
@@ -35,9 +35,9 @@
     - Let It Go
     - Outside Lookin' In Remix
   credit_images:
-    - src: /images/pop-credits-1.jpg
+    - src: /images/pop-credits-1.webp
       alt: "Pop Collection credits, part 1: musicians for You and Me; Feel for You, Easy, Paradise and Everything to Me; Let Love Show (Samba Remix); Why and Little More Love Remix; Shine On, Just a Little Time and Together We Stand"
-    - src: /images/pop-credits-2.jpg
+    - src: /images/pop-credits-2.webp
       alt: "Pop Collection credits, part 2"
   videos:
     - id: cbu5mu8H1_I
@@ -102,7 +102,7 @@
   short: All About Love
   kind: Album
   year: 2022
-  cover: /images/all-about-love-cover.jpg
+  cover: /images/all-about-love-cover.webp
   cover_wide: true
   intro: >-
     Soulful Pop/R&B songs that share Tamara's spicy real-life stories, released
@@ -242,16 +242,16 @@
   short: Let It Go
   kind: EP
   year: 2021
-  cover: /images/let-it-go-cover.jpg
+  cover: /images/let-it-go-cover.webp
   intro: >-
     "Let It Go" is a blend of inspirational lyrics and fun-loving beats. Journey with
     these upbeat songs and their positive vibe. Coming from the heart, Tamara's music
     uplifts, encourages and entertains the listener. Dance your cares away and "Let It Go"!
     Released June 18, 2021.
   credit_images:
-    - src: /images/let-it-go-press.jpg
+    - src: /images/let-it-go-press.webp
       alt: "Let It Go EP press sheet: track list, the story behind It's Your Life (Believe), and musician credits"
-    - src: /images/let-it-go-credits.jpg
+    - src: /images/let-it-go-credits.webp
       alt: "Let It Go EP full credits"
   videos:
     - id: R72elF2Vmus

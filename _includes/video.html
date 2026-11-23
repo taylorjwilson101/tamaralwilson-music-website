@@ -7,7 +7,7 @@
 {% endcomment %}
 <article class="video{% if include.compact %} compact{% endif %}">
   <a class="yt" href="https://www.youtube.com/watch?v={{ include.v.id }}" data-id="{{ include.v.id }}" data-title="{{ include.v.title | escape }}">
-    <img src="https://i.ytimg.com/vi/{{ include.v.id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+    <img src="https://i.ytimg.com/vi/{{ include.v.id }}/mqdefault.jpg" srcset="https://i.ytimg.com/vi/{{ include.v.id }}/mqdefault.jpg 320w, https://i.ytimg.com/vi/{{ include.v.id }}/hqdefault.jpg 480w" sizes="(min-width: 1100px) 340px, (min-width: 700px) 30vw, 80vw" alt="" loading="lazy" width="320" height="180">
     <span class="play" aria-hidden="true"></span>
     <span class="sr-only">Play video: {{ include.v.title }}</span>
   </a>
