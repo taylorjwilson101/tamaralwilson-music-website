@@ -315,3 +315,83 @@ details.credits[open] summary .when-closed { display: none; }
 .poster-cover img, .poster-cover img[src] { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
 @media (min-width: 860px) { .poster-cover img { height: auto; max-width: 440px; } }
 .poster-inner > * { min-width: 0; }
+
+/* ---------- Music page: one poster per album ----------
+   Each album section sets --m and --m2 (hex colors from _data/releases.yml). */
+.music-intro .wrap { padding-top: 64px; padding-bottom: 56px; }
+.jump { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 28px 0 0; }
+.jump a { display: inline-block; padding: 8px 14px; border-radius: 999px; text-decoration: none; font-size: .9rem; color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--m) 55%, transparent); background: color-mix(in srgb, var(--m) 12%, transparent); }
+.jump a:hover { background: color-mix(in srgb, var(--m) 30%, transparent); }
+
+.album { position: relative; overflow: hidden; scroll-margin-top: 72px; padding: 72px 0 64px; border-top: 1px solid rgba(255,255,255,.06);
+  --mc: color-mix(in srgb, var(--m) 62%, #fff);
+  background:
+    radial-gradient(55% 70% at 78% 18%, color-mix(in srgb, var(--m) 42%, transparent), transparent 70%),
+    radial-gradient(45% 60% at 0% 100%, color-mix(in srgb, var(--m2) 18%, transparent), transparent 70%),
+    linear-gradient(100deg, color-mix(in srgb, var(--m) 6%, #0f0b09), color-mix(in srgb, var(--m) 18%, #120d0a)); }
+.album.flip { background:
+    radial-gradient(55% 70% at 22% 18%, color-mix(in srgb, var(--m) 42%, transparent), transparent 70%),
+    radial-gradient(45% 60% at 100% 100%, color-mix(in srgb, var(--m2) 18%, transparent), transparent 70%),
+    linear-gradient(260deg, color-mix(in srgb, var(--m) 6%, #0f0b09), color-mix(in srgb, var(--m) 18%, #120d0a)); }
+.album .poster-label { color: var(--mc); }
+.album .poster-label span { color: var(--m); }
+.album .lede { color: color-mix(in srgb, var(--text) 85%, var(--m)); max-width: 52ch; }
+.album .btn.ghost { border-color: rgba(255,255,255,.28); }
+.album-head { display: grid; gap: 32px; align-items: center; margin-bottom: 48px; }
+.album-head > * { min-width: 0; }
+.album-art img { width: 100%; display: block; }
+.album-art img.square { aspect-ratio: 1; object-fit: cover; max-width: 380px; margin-inline: auto; border-radius: 8px;
+  box-shadow: 0 30px 90px color-mix(in srgb, var(--m) 45%, transparent), 0 10px 30px rgba(0,0,0,.5); }
+.album-art img.wide { border-radius: 8px; box-shadow: 0 30px 90px color-mix(in srgb, var(--m) 40%, transparent), 0 10px 30px rgba(0,0,0,.5); }
+.album-art img.still { aspect-ratio: 16/10; object-fit: cover; opacity: .9;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 45%, transparent 100%);
+          mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 45%, transparent 100%); }
+@media (min-width: 860px) {
+  .album-head { grid-template-columns: 1.1fr .9fr; gap: 56px; }
+  .album.flip .album-head { grid-template-columns: .9fr 1.1fr; }
+  .album.flip .album-art { order: -1; }
+}
+.album .video h3 { font-size: 1.05rem; }
+.album .video p { color: color-mix(in srgb, var(--muted) 85%, var(--m)); }
+.album-extras { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.album-extras details[open] { flex-basis: 100%; }
+details.more summary { cursor: pointer; list-style: none; display: inline-flex; }
+details.more summary::-webkit-details-marker { display: none; }
+details.more .when-open, details.more[open] .when-closed { display: none; }
+details.more[open] .when-open { display: inline; }
+details.more[open] > summary { margin-bottom: 24px; }
+details.more > .video-grid { margin-top: 0; }
+.album-videos > details.more { margin-top: 8px; }
+.album .tracklist { columns: 2 220px; max-width: 760px; }
+.album .press-release h3 { font-family: var(--serif); font-size: 1.35rem; margin-bottom: .6em; }
+
+/* ---------- About page ---------- */
+.plain { padding: 80px 0; }
+.plain .poster-label { color: color-mix(in srgb, rgb(var(--c)) 55%, #fff); }
+.plain .poster-label span { font-family: var(--serif); font-style: italic; font-size: 1.15rem; letter-spacing: 0; margin-right: 10px; color: rgb(var(--c)); }
+.quote-poster .wrap { padding: 88px 16px; text-align: center; }
+.quote-poster blockquote { margin: 0 auto; max-width: 30ch; font-family: var(--serif); font-style: italic; font-size: clamp(1.5rem, 3.2vw, 2.3rem); line-height: 1.35; }
+.poster .video-grid { margin-top: 8px; }
+.poster > .wrap:not(.poster-inner) { padding-top: 72px; padding-bottom: 72px; }
+.poster.music-intro > .wrap { padding-top: 64px; padding-bottom: 56px; }
+.poster .form { display: grid; gap: 14px; max-width: 480px; margin: 8px 0 20px; }
+.poster .form label { display: grid; gap: 6px; font-size: .9rem; }
+.poster .form input, .poster .form textarea { font: inherit; color: var(--text); background: rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.2); border-radius: 10px; padding: 12px 14px; }
+.poster .actions + .actions { margin-top: 12px; }
+#story, #contact { scroll-margin-top: 72px; }
+/* Keep the Music page compact: video descriptions show 3 lines */
+.album .video p:not(:has(a)) { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+/* Phones: each album's videos become a sideways-swipe row, so the Music page stays short */
+@media (max-width: 699px) {
+  .album-videos > .video-grid, .album-videos details.more > .video-grid {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 78%; grid-template-columns: none;
+    overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-inline: -16px; padding: 0 16px 8px; scrollbar-width: none; }
+  .album-videos .video-grid::-webkit-scrollbar { display: none; }
+  .album-videos .video { scroll-snap-align: start; }
+}
+@media (max-width: 699px) {
+  .album-videos > .video-grid, .album-videos details.more > .video-grid { scroll-padding-inline: 16px; }
+  .album-art:has(img.still) { display: none; }   /* on phones the first video already shows this picture */
+  .album-head { margin-bottom: 28px; }
+}

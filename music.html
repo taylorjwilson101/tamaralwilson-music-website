@@ -2,13 +2,99 @@
 layout: default
 title: Music
 permalink: /music
-description: Albums, EPs and singles by Tamara L. Wilson, with lyric videos and credits.
+description: Every album, EP and single by Tamara L. Wilson, with lyric videos, track lists and credits.
 ---
-<section class="wrap section page-head">
-  <p class="eyebrow">Discography</p>
-  <h1>Music</h1>
-  <p class="lede">Albums, EPs and singles, each with lyric videos and credits. Buy and stream on <a class="text-link" href="{{ site.links.buy_pop_collection }}">HearNow</a>, or listen free on <a class="text-link" href="{{ site.links.jango }}">Jango</a> and <a class="text-link" href="{{ site.links.youtube }}">YouTube</a>.</p>
+{% comment %}
+  All of Tamara's music on one page. Each album is a "poster" in its own color
+  (mood / mood2 in _data/releases.yml), alternating sides. Each shows 3 videos;
+  the rest, plus track lists, credits and press, open in place.
+  Old album addresses like /paradise forward to /music#paradise.
+{% endcomment %}
+
+<section class="poster music-intro" style="--c: 232, 145, 63; --deep: #120c08; --mid: #24160c">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="poster-label">Discography</p>
+      <h1 class="poster-title">Music</h1>
+      <p class="lede">Nine albums, EPs and collections of soulful pop and R&amp;B. Buy and stream on <a class="text-link" href="{{ site.links.buy_pop_collection }}">HearNow</a>, or listen free on <a class="text-link" href="{{ site.links.jango }}">Jango</a> and <a class="text-link" href="{{ site.links.youtube }}">YouTube</a>.</p>
+      <nav aria-label="Albums on this page">
+        <ul class="jump">
+          {% for r in site.data.releases %}<li><a href="#{{ r.slug }}" style="--m: {{ r.mood }}">{{ r.short }}</a></li>{% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
 </section>
-<section class="wrap section">
-  {% include release-grid.html %}
+
+{% for r in site.data.releases %}
+{% assign vid = r.art_video | default: r.videos[0].id %}
+{% assign n = forloop.index %}
+<section class="album{% cycle '', ' flip' %}" id="{{ r.slug }}" style="--m: {{ r.mood }}; --m2: {{ r.mood2 | default: r.mood }}">
+  <div class="wrap">
+    <div class="album-head">
+      <div class="album-copy reveal">
+        <p class="poster-label"><span>{% if n < 10 %}0{% endif %}{{ n }}</span> {{ r.kind }}{% if r.year %} &middot; {{ r.year }}{% endif %}</p>
+        <h2 class="poster-title">{{ r.title }}</h2>
+        {% if r.intro %}<p class="lede">{{ r.intro }}</p>{% endif %}
+        <div class="actions">
+          {% if r.buy %}<a class="btn" href="{{ r.buy }}">Buy &amp; stream</a>{% endif %}
+          {% if r.playlist %}<a class="btn ghost" href="https://www.youtube.com/playlist?list={{ r.playlist }}">YouTube playlist</a>{% endif %}
+        </div>
+      </div>
+      <div class="album-art reveal">
+        {% if r.cover %}
+        <img class="{% if r.cover_wide %}wide{% else %}square{% endif %}" src="{{ r.cover | relative_url }}" alt="{{ r.title }} cover art" loading="lazy">
+        {% else %}
+        <img class="still" src="https://i.ytimg.com/vi/{{ vid }}/maxresdefault.jpg" alt="" loading="lazy"{% if r.art_position %} style="object-position: {{ r.art_position }}"{% endif %} onload="if(this.naturalWidth<=120){this.onload=null;this.src='https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg'}" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg'">
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="album-videos">
+      <div class="video-grid">
+        {% for v in r.videos limit: 3 %}{% include video.html v=v %}{% endfor %}
+      </div>
+      {% if r.videos.size > 3 %}
+      <details class="more">
+        <summary class="btn ghost"><span class="when-closed">Show all {{ r.videos.size }} videos</span><span class="when-open">Show fewer</span></summary>
+        <div class="video-grid">
+          {% for v in r.videos offset: 3 %}{% include video.html v=v %}{% endfor %}
+        </div>
+      </details>
+      {% endif %}
+    </div>
+
+    {% if r.tracklist or r.credits or r.credit_images or r.press %}
+    <div class="album-extras">
+      {% if r.tracklist %}
+      <details class="more">
+        <summary class="btn ghost"><span class="when-closed">Track list</span><span class="when-open">Hide track list</span></summary>
+        <ol class="tracklist">{% for t in r.tracklist %}<li>{{ t }}</li>{% endfor %}</ol>
+      </details>
+      {% endif %}
+      {% if r.press %}
+      <details class="more">
+        <summary class="btn ghost"><span class="when-closed">Press release</span><span class="when-open">Hide press release</span></summary>
+        <div class="prose press-release">
+          <h3>{{ r.press.headline }}</h3>
+          {% for para in r.press.paragraphs %}<p>{{ para }}</p>{% endfor %}
+          {% if r.press.quote %}<p class="quote-line">&ldquo;{{ r.press.quote }}&rdquo; <span class="muted small">&mdash; {{ r.press.quote_by }}</span></p>{% endif %}
+        </div>
+      </details>
+      {% endif %}
+      {% if r.credits or r.credit_images %}
+      <details class="more">
+        <summary class="btn ghost"><span class="when-closed">Credits</span><span class="when-open">Hide credits</span></summary>
+        {% if r.credits %}<p class="prose">{{ r.credits }}</p>{% endif %}
+        {% if r.credit_images %}
+        <div class="credit-images">
+          {% for img in r.credit_images %}<a href="{{ img.src | relative_url }}"><img src="{{ img.src | relative_url }}" alt="{{ img.alt }}" loading="lazy"></a>{% endfor %}
+        </div>
+        {% endif %}
+      </details>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
 </section>
+{% endfor %}
