@@ -5,8 +5,8 @@
 # To add a video, copy an existing "- id:" block and change it.
 
 - slug: pop-collection
-  mood: "#e8913f"     # page color (from the cover)
-  mood2: "#9b4fc4"
+  mood: "#b07a52"     # page color (from the cover)
+  mood2: "#7a4f84"
   title: Pop Collection Remastered
   short: Pop Collection
   kind: Album
@@ -96,8 +96,8 @@
       text: A funky, upbeat dance song, and some fans say it's Tamara's best yet! The second release from Tamara's Soulful Summer Music Series.
 
 - slug: all-about-love
-  mood: "#d63c8f"     # page color (from the cover)
-  mood2: "#6b3fd0"
+  mood: "#9a4e72"     # page color (from the cover)
+  mood2: "#5f5288"
   title: All About Love
   short: All About Love
   kind: Album
@@ -145,8 +145,8 @@
 - slug: y-o-k-o-b
   art_video: I2rU4yY5cOU   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
   art_position: "center 100%"   # which part of that still to show
-  mood: "#e0a040"     # page color (from the cover)
-  mood2: "#3aa7b8"
+  mood: "#a98a56"     # page color (from the cover)
+  mood2: "#447e80"
   title: Your Own Kind of Beautiful
   short: Y.O.K.O.B.
   kind: EP
@@ -168,8 +168,8 @@
 - slug: paradise
   art_video: Z6klgqO4wrk   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
   art_position: "22% 60%"   # which part of that still to show
-  mood: "#f0a030"     # page color (from the cover)
-  mood2: "#1f8fa3"
+  mood: "#b38a4e"     # page color (from the cover)
+  mood2: "#3b7078"
   title: Paradise
   short: Paradise
   kind: Album
@@ -207,8 +207,8 @@
 - slug: shelter
   art_video: P98pH9tGZ0w   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
   art_position: "40% 80%"   # which part of that still to show
-  mood: "#5d7aa8"     # page color (from the cover)
-  mood2: "#8a7fc0"
+  mood: "#5a6d8a"     # page color (from the cover)
+  mood2: "#77708f"
   title: Shelter
   short: Shelter
   kind: Collection
@@ -240,8 +240,8 @@
       text: When all else fails... "I Believe in Love"!
 
 - slug: let-it-go
-  mood: "#3f9fd0"     # page color (from the cover)
-  mood2: "#d9b98a"
+  mood: "#4f7f96"     # page color (from the cover)
+  mood2: "#b1a081"
   title: Let It Go
   short: Let It Go
   kind: EP
@@ -274,8 +274,8 @@
 - slug: freedom
   art_video: kaM8pmkaYsM   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
   art_position: "50% 90%"   # which part of that still to show
-  mood: "#e0a13a"     # page color (from the cover)
-  mood2: "#c0602a"
+  mood: "#ab8a52"     # page color (from the cover)
+  mood2: "#94603f"
   title: Freedom
   short: Freedom
   kind: EP
@@ -296,8 +296,8 @@
   art_video: MiJ-JdLU864   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
   art_position: "80% 100%"   # which part of that still to show
   art_zoom: 2   # how far to zoom in on it (1 = whole picture)
-  mood: "#c0443a"     # page color (from the cover)
-  mood2: "#e0a040"
+  mood: "#8c3e38"     # page color (from the cover)
+  mood2: "#a98a56"
   title: A New World
   short: New World
   kind: EP
@@ -335,8 +335,8 @@
   art_video: hkbUgS8jTpA   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
   art_position: "50% 53%"   # which part of that still to show
   art_zoom: 1.75   # how far to zoom in on it (1 = whole picture)
-  mood: "#c9566e"     # page color (from the cover)
-  mood2: "#e5a33a"
+  mood: "#985467"     # page color (from the cover)
+  mood2: "#ab8a52"
   title: Singles
   short: Singles
   kind: Singles
