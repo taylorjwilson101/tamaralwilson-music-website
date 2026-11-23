@@ -297,3 +297,16 @@ details.credits[open] summary .when-closed { display: none; }
 .photo-strip { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); }
 .photo-strip img { width: 100%; height: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
 @media (max-width: 560px) { .photo-strip { grid-template-columns: 1fr 1fr; } .photo-strip li:last-child { display: none; } }
+
+/* Cut-out photo (background removed): she stands directly in the color, no box.
+   The fades at the photo's own edges are built into the image file. */
+.hero-photo.cutout img {
+  mix-blend-mode: normal; object-fit: contain; object-position: center bottom; aspect-ratio: auto;
+  height: min(62vh, 480px); width: 100%;
+  filter: drop-shadow(0 20px 60px rgba(10, 4, 20, .55));
+  -webkit-mask-image: none; mask-image: none;
+}
+@media (min-width: 860px) {
+  .hero-photo.cutout { top: 6%; bottom: 0; right: 5%; width: 38%; }
+  .hero-photo.cutout img { height: 100%; -webkit-mask-image: none; mask-image: none; }
+}
