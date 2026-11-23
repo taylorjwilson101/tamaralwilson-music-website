@@ -87,52 +87,6 @@ p { margin: 0 0 1em; }
 }
 
 /* Hero */
-.hero {
-  position: relative; overflow: hidden;
-  /* one strong color washing over the hero, like a poster: violet from the Pop Collection art */
-  background:
-    radial-gradient(55% 90% at 78% 40%, rgba(170, 92, 220, .55), transparent 70%),
-    radial-gradient(40% 60% at 8% 95%, rgba(232, 145, 63, .18), transparent 70%),
-    linear-gradient(100deg, #110a18 0%, #1d1029 45%, #3a1a55 100%);
-}
-.hero-inner { display: grid; gap: 0; align-items: center; }
-.hero-copy { position: relative; z-index: 1; padding: 8px 0 56px; }
-.hero-name { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: .01em; line-height: .95; font-size: clamp(2.6rem, 6.4vw, 4.8rem); margin-bottom: .35em; }
-.hero-line { font-family: var(--serif); font-size: clamp(1.3rem, 2.6vw, 1.75rem); color: var(--text); margin-bottom: .6em; }
-.hero .eyebrow { color: #e7b8ff; }
-.hero .lede { color: #d8c9e2; }
-.hero .info-row { border-top-color: rgba(255,255,255,.14); }
-.hero .info-row dt { color: #e7b8ff; }
-.hero .info-row a { border-bottom-color: rgba(255,255,255,.22); }
-
-/* Photo: head and shoulders, tinted to the hero color, fading into it (no frame) */
-.hero-photo { margin: 0 -16px; }
-.hero-photo img {
-  width: 100%; height: auto; aspect-ratio: 1000 / 1133; object-fit: cover; object-position: 55% 15%; max-height: 70vh;
-  mix-blend-mode: lighten;
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-          mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-}
-@media (max-width: 859px) {
-  .hero-photo { order: -1; }
-  .hero-copy { margin-top: -64px; }
-}
-@media (min-width: 700px) and (max-width: 859px) { .hero-photo { margin: 0 -32px; } }
-@media (min-width: 860px) {
-  .hero { min-height: min(78vh, 680px); display: flex; align-items: center; }
-  .hero > .wrap { width: 100%; }
-  .hero-inner { grid-template-columns: 1.25fr .75fr; }
-  .hero-copy { padding: 64px 0 72px; }
-  .hero-photo { position: absolute; top: 10%; bottom: 0; right: 6%; width: 34%; margin: 0; }
-  .hero-photo img {
-    width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-position: 50% 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 25%, #000 80%, transparent 100%), linear-gradient(to top, transparent 0%, #000 22%, #000 88%, transparent 100%);
-    -webkit-mask-composite: source-in;
-            mask-image: linear-gradient(to right, transparent 0%, #000 25%, #000 80%, transparent 100%), linear-gradient(to top, transparent 0%, #000 22%, #000 88%, transparent 100%);
-            mask-composite: intersect;
-  }
-}
-
 /* Featured album */
 .feature { background: linear-gradient(180deg, var(--surface), var(--bg)); border-block: 1px solid var(--line); }
 .feature-inner { display: grid; gap: 40px; padding-top: 64px; padding-bottom: 64px; align-items: start; }
@@ -298,15 +252,66 @@ details.credits[open] summary .when-closed { display: none; }
 .photo-strip img { width: 100%; height: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
 @media (max-width: 560px) { .photo-strip { grid-template-columns: 1fr 1fr; } .photo-strip li:last-child { display: none; } }
 
-/* Cut-out photo (background removed): she stands directly in the color, no box.
-   The fades at the photo's own edges are built into the image file. */
-.hero-photo.cutout img {
-  mix-blend-mode: normal; object-fit: contain; object-position: center bottom; aspect-ratio: auto;
-  height: min(62vh, 480px); width: 100%;
-  filter: drop-shadow(0 20px 60px rgba(10, 4, 20, .55));
-  -webkit-mask-image: none; mask-image: none;
+
+/* ---------- Homepage poster series ----------
+   Each poster sets --c (its color as "R, G, B"), --deep and --mid (background shades). */
+.poster {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(55% 85% at 76% 45%, rgba(var(--c), .50), transparent 70%),
+    radial-gradient(45% 70% at 4% 100%, rgba(var(--c2, var(--c)), .16), transparent 70%),
+    linear-gradient(100deg, var(--deep) 0%, var(--mid) 100%);
+}
+.poster.flip {
+  background:
+    radial-gradient(55% 85% at 24% 45%, rgba(var(--c), .50), transparent 70%),
+    radial-gradient(45% 70% at 96% 100%, rgba(var(--c2, var(--c)), .16), transparent 70%),
+    linear-gradient(260deg, var(--deep) 0%, var(--mid) 100%);
+}
+.poster + .poster { border-top: 1px solid rgba(255,255,255,.06); }
+.poster-inner { display: grid; align-items: end; }
+.poster-copy { padding: 8px 0 64px; position: relative; z-index: 1; }
+.poster-label { font-size: .76rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: color-mix(in srgb, rgb(var(--c)) 55%, #fff); margin-bottom: 18px; }
+.poster-label span { font-family: var(--serif); font-style: italic; font-size: 1.15rem; letter-spacing: 0; margin-right: 10px; color: rgb(var(--c)); }
+.poster-title { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: .005em; line-height: .95; font-size: clamp(2.4rem, 5.8vw, 4.5rem); margin: 0 0 .4em; }
+.poster .hero-line { font-family: var(--serif); font-size: clamp(1.3rem, 2.6vw, 1.75rem); margin-bottom: .6em; }
+.poster .lede { color: color-mix(in srgb, var(--text) 82%, rgb(var(--c))); max-width: 52ch; }
+.poster p:not(.lede):not(.poster-label):not(.hero-line) { color: color-mix(in srgb, var(--muted) 80%, rgb(var(--c))); max-width: 56ch; }
+.poster .info-row { border-top-color: rgba(255,255,255,.14); }
+.poster .info-row dt { color: color-mix(in srgb, rgb(var(--c)) 55%, #fff); }
+.poster .info-row a { border-bottom-color: rgba(255,255,255,.22); }
+.poster .btn.ghost { border-color: rgba(255,255,255,.28); }
+.poster .text-link { color: color-mix(in srgb, rgb(var(--c)) 60%, #fff); }
+
+.poster-photo img { display: block; width: 100%; height: min(58vh, 460px); object-fit: contain; object-position: center bottom;
+  filter: drop-shadow(0 24px 60px rgba(0,0,0,.45)); }
+.poster-cover { align-self: center; padding: 32px 0; }
+.poster-cover img { height: auto; max-width: 420px; margin-inline: auto; border-radius: 8px; object-fit: cover;
+  box-shadow: 0 30px 90px rgba(var(--c), .45), 0 10px 30px rgba(0,0,0,.5); filter: none; }
+.poster-videos { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); margin: 8px 0 28px; max-width: 560px; }
+.poster-videos .video h3 { font-size: .95rem; }
+
+@media (max-width: 859px) {
+  .poster-photo { order: -1; padding-top: 24px; }
+  .poster-copy { margin-top: -40px; }
+  .poster-cover { padding: 40px 0 56px; }
+  .poster-cover + * { margin-top: 0; }
 }
 @media (min-width: 860px) {
-  .hero-photo.cutout { top: 6%; bottom: 0; right: 5%; width: 38%; }
-  .hero-photo.cutout img { height: 100%; -webkit-mask-image: none; mask-image: none; }
+  .poster-inner { grid-template-columns: 1.1fr .9fr; gap: 40px; min-height: min(84vh, 720px); }
+  .poster.flip .poster-inner { grid-template-columns: .9fr 1.1fr; }
+  .poster.flip .poster-photo { order: -1; }
+  .poster-copy { align-self: center; padding: 72px 0; }
+  .poster-photo { align-self: end; }
+  .poster-photo img { height: min(76vh, 660px); }
 }
+
+/* Gentle scroll-in: text and photos fade up once as they come into view.
+   Only when JavaScript runs, and never for people who prefer reduced motion. */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s ease; }
+.js .poster-photo.reveal { transition-delay: .15s; }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } }
+.poster-cover img, .poster-cover img[src] { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+@media (min-width: 860px) { .poster-cover img { height: auto; max-width: 440px; } }
+.poster-inner > * { min-width: 0; }
