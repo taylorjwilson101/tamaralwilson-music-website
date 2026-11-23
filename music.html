@@ -6,8 +6,8 @@ description: Every album, EP and single by Tamara L. Wilson, with lyric videos, 
 ---
 {% comment %}
   All of Tamara's music on one page. Each album is a "poster" in its own color
-  (mood / mood2 in _data/releases.yml), alternating sides. Each shows 3 videos;
-  the rest, plus track lists, credits and press, open in place.
+  (mood / mood2 in _data/releases.yml), alternating sides. 
+  all videos sit in a side-scrolling row; track lists, credits and press open in place.
   Old album addresses like /paradise forward to /music#paradise.
 {% endcomment %}
 
@@ -45,23 +45,18 @@ description: Every album, EP and single by Tamara L. Wilson, with lyric videos, 
         {% if r.cover %}
         <img class="{% if r.cover_wide %}wide{% else %}square{% endif %}" src="{{ r.cover | relative_url }}" alt="{{ r.title }} cover art" loading="lazy">
         {% else %}
-        <img class="still" src="https://i.ytimg.com/vi/{{ vid }}/maxresdefault.jpg" alt="" loading="lazy"{% if r.art_position %} style="object-position: {{ r.art_position }}"{% endif %} onload="if(this.naturalWidth<=120){this.onload=null;this.src='https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg'}" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg'">
+        <div class="still-wrap"><img class="still" src="https://i.ytimg.com/vi/{{ vid }}/maxresdefault.jpg" alt="" loading="lazy"{% if r.art_position %} style="object-position: {{ r.art_position }}; transform-origin: {{ r.art_position }}; transform: scale({{ r.art_zoom | default: 1.45 }})"{% endif %} onload="if(this.naturalWidth<=120){this.onload=null;this.src='https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg'}" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg'"></div>
         {% endif %}
       </div>
     </div>
 
-    <div class="album-videos">
-      <div class="video-grid">
-        {% for v in r.videos limit: 3 %}{% include video.html v=v %}{% endfor %}
+    <div class="vrow">
+      <div class="vrow-track" tabindex="0" role="region" aria-label="{{ r.title }} videos ({{ r.videos.size }}), scroll sideways">
+        {% for v in r.videos %}{% include video.html v=v %}{% endfor %}
       </div>
-      {% if r.videos.size > 3 %}
-      <details class="more">
-        <summary class="btn ghost"><span class="when-closed">Show all {{ r.videos.size }} videos</span><span class="when-open">Show fewer</span></summary>
-        <div class="video-grid">
-          {% for v in r.videos offset: 3 %}{% include video.html v=v %}{% endfor %}
-        </div>
-      </details>
-      {% endif %}
+      <button class="vrow-btn prev" type="button" aria-label="Previous {{ r.title }} videos" hidden>&lsaquo;</button>
+      <button class="vrow-btn next" type="button" aria-label="More {{ r.title }} videos" hidden>&rsaquo;</button>
+      <p class="vrow-count">{{ r.videos.size }} video{% if r.videos.size != 1 %}s{% endif %}</p>
     </div>
 
     {% if r.tracklist or r.credits or r.credit_images or r.press %}

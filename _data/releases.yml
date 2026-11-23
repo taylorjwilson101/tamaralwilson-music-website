@@ -143,8 +143,8 @@
       text: This R&B/Pop crossover song features Macon, GA's blind blues guitar legend Joey Stuckey, who plays and programs every instrument. "Why" can't love have the last word?
 
 - slug: y-o-k-o-b
-  art_video: I2rU4yY5cOU   # which video still to show at the top of the page
-  art_position: "center 100%"   # show the bottom of that still
+  art_video: I2rU4yY5cOU   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
+  art_position: "center 100%"   # which part of that still to show
   mood: "#e0a040"     # page color (from the cover)
   mood2: "#3aa7b8"
   title: Your Own Kind of Beautiful
@@ -166,6 +166,8 @@
       title: Make It Through
 
 - slug: paradise
+  art_video: Z6klgqO4wrk   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
+  art_position: "22% 60%"   # which part of that still to show
   mood: "#f0a030"     # page color (from the cover)
   mood2: "#1f8fa3"
   title: Paradise
@@ -203,6 +205,8 @@
       text: Retro, flirty, fun, sexy song about anticipating love.
 
 - slug: shelter
+  art_video: P98pH9tGZ0w   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
+  art_position: "40% 80%"   # which part of that still to show
   mood: "#5d7aa8"     # page color (from the cover)
   mood2: "#8a7fc0"
   title: Shelter
@@ -268,7 +272,8 @@
       text: Dare to be yourself and use the power of your mind to create the life you want!
 
 - slug: freedom
-  art_video: Sv96B4dp36w   # which video still to show at the top of the page
+  art_video: kaM8pmkaYsM   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
+  art_position: "50% 90%"   # which part of that still to show
   mood: "#e0a13a"     # page color (from the cover)
   mood2: "#c0602a"
   title: Freedom
@@ -288,7 +293,9 @@
   playlist: PLbHcuzIBB7DB_vE4xsfhtCct0FgOU8Dvx
 
 - slug: new-world
-  art_video: 2Tg4TVe7PPQ   # which video still to show at the top of the page
+  art_video: MiJ-JdLU864   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
+  art_position: "80% 100%"   # which part of that still to show
+  art_zoom: 2   # how far to zoom in on it (1 = whole picture)
   mood: "#c0443a"     # page color (from the cover)
   mood2: "#e0a040"
   title: A New World
@@ -325,6 +332,9 @@
         this, together!
 
 - slug: singles
+  art_video: hkbUgS8jTpA   # video still shown large at the top of this album (cropped, so it differs from its thumbnail)
+  art_position: "50% 53%"   # which part of that still to show
+  art_zoom: 1.75   # how far to zoom in on it (1 = whole picture)
   mood: "#c9566e"     # page color (from the cover)
   mood2: "#e5a33a"
   title: Singles

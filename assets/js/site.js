@@ -97,3 +97,33 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function (el) { io.observe(el); });
 })();
+
+// Side-scrolling video rows: arrows show only when there's more to see that way.
+(function () {
+  document.querySelectorAll('.vrow').forEach(function (row) {
+    var track = row.querySelector('.vrow-track');
+    var prev = row.querySelector('.vrow-btn.prev');
+    var next = row.querySelector('.vrow-btn.next');
+    if (!track || !prev || !next) return;
+    function update() {
+      var max = track.scrollWidth - track.clientWidth;
+      prev.hidden = track.scrollLeft <= 4;
+      next.hidden = track.scrollLeft >= max - 4;
+    }
+    function go(dir) {
+      var card = track.querySelector('.video');
+      var step = card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0) : track.clientWidth;
+      var per = Math.max(1, Math.floor((track.clientWidth + 1) / step));
+      track.scrollBy({ left: dir * per * step, behavior: 'smooth' });
+    }
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    track.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+    });
+    window.addEventListener('resize', update);
+    update();
+  });
+})();

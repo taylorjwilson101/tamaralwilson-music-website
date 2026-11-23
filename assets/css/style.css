@@ -295,8 +295,6 @@ details.more summary::-webkit-details-marker { display: none; }
 details.more .when-open, details.more[open] .when-closed { display: none; }
 details.more[open] .when-open { display: inline; }
 details.more[open] > summary { margin-bottom: 24px; }
-details.more > .video-grid { margin-top: 0; }
-.album-videos > details.more { margin-top: 8px; }
 .album .tracklist { columns: 2 220px; max-width: 760px; }
 .album .press-release h3 { font-family: var(--serif); font-size: 1.35rem; margin-bottom: .6em; }
 
@@ -316,17 +314,7 @@ details.more > .video-grid { margin-top: 0; }
 #story, #contact { scroll-margin-top: 72px; }
 /* Keep the Music page compact: video descriptions show 3 lines */
 .album .video p:not(:has(a)) { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-/* Phones: each album's videos become a sideways-swipe row, so the Music page stays short */
 @media (max-width: 699px) {
-  .album-videos > .video-grid, .album-videos details.more > .video-grid {
-    display: grid; grid-auto-flow: column; grid-auto-columns: 78%; grid-template-columns: none;
-    overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-inline: -16px; padding: 0 16px 8px; scrollbar-width: none; }
-  .album-videos .video-grid::-webkit-scrollbar { display: none; }
-  .album-videos .video { scroll-snap-align: start; }
-}
-@media (max-width: 699px) {
-  .album-videos > .video-grid, .album-videos details.more > .video-grid { scroll-padding-inline: 16px; }
-  .album-art:has(img.still) { display: none; }   /* on phones the first video already shows this picture */
   .album-head { margin-bottom: 28px; }
 }
 
@@ -361,3 +349,37 @@ details.more > .video-grid { margin-top: 0; }
   background: url("../../images/grain.png") repeat; background-size: 160px;
 }
 @media (prefers-reduced-transparency: reduce) { .poster::before, .album::before { display: none; } }
+
+/* ---------- Side-scrolling video rows (Music page) ---------- */
+.vrow { position: relative; --gap: 20px; --per: 3.25; }
+.vrow-track {
+  display: grid; grid-auto-flow: column; gap: var(--gap);
+  grid-auto-columns: calc((100% - (var(--per) - 1) * var(--gap)) / var(--per)); /* a 4th card peeks in */
+  overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 2px;
+  padding: 4px 2px 12px; scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--m, var(--accent)) 60%, transparent) transparent;
+}
+.vrow-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 8px; }
+.vrow-track .video { scroll-snap-align: start; min-width: 0; }
+.vrow-btn {
+  position: absolute; top: calc((100% - 40px) * .28); z-index: 2; width: 48px; height: 48px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 2rem; line-height: 1; padding-bottom: 4px; cursor: pointer;
+  color: var(--text); background: rgba(15, 11, 9, .78); border: 1px solid color-mix(in srgb, var(--m, var(--accent)) 55%, transparent);
+  box-shadow: 0 8px 24px rgba(0,0,0,.45); backdrop-filter: blur(6px); transition: background .2s, transform .2s;
+}
+.vrow-btn:hover { background: color-mix(in srgb, var(--m, var(--accent)) 70%, #000); transform: scale(1.06); }
+.vrow-btn.prev { left: -18px; } .vrow-btn.next { right: -18px; }
+.vrow-btn[hidden] { display: none; }
+.vrow-count { margin: 4px 0 0; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: color-mix(in srgb, var(--m, var(--accent)) 55%, #fff); }
+@media (max-width: 1099px) { .vrow { --per: 2.3; } }
+@media (max-width: 699px) {
+  .vrow { --per: 1.25; --gap: 14px; }
+  .vrow-track { margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px; }
+  .vrow-btn { display: none; }   /* phones: swipe */
+}
+
+/* Album picture for albums without a cover: a cropped, zoomed video still */
+.album-art .still-wrap { overflow: hidden; aspect-ratio: 16/10; border-radius: 8px;
+  -webkit-mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 48%, transparent 100%);
+          mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 48%, transparent 100%); }
+.album-art .still-wrap img.still { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; transform: scale(1.45); -webkit-mask-image: none; mask-image: none; opacity: .95; }
+@media (max-width: 699px) { .album-art .still-wrap { aspect-ratio: 16/9; } }
